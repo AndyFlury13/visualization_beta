@@ -1,0 +1,42 @@
+Article ID,Credibility Indicator ID,Credibility Indicator Category,Credibility Indicator Name,Points,Indices of Label in Article,Start,End,target_text
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,H0,Holistic,Misleading Title,-1.6,N,-1,-1,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,H1,Holistic,Very Biased,-8.0,N,-1,-1,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,H2,Holistic,Qualified Source,2.0,"range(3149, 3290)",3149,3290,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,L0,Language,Exaggeration,-2.0,"range(1565, 1600)",1565,1600,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P0,Probability,Inappropriate confidence,-0.8390359525563189,"range(2765, 2826)",2765,2826,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P1,Probability,Doesn’t acknowledge uncertainty,-1.6617593315300485,N,-1,-1,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P2,Probability,Inappropriate confidence,-0.4,"range(1326, 1347)",1326,1347,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P3,Probability,Acknowledges uncertainty,0.8,"range(1326, 1343)",1326,1343,likely candidates
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P4,Probability,Open to evidence,0.6666666666666666,"range(1092, 1131)",1092,1131,depends
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P4,Probability,Open to evidence,0,"range(1136, 1265)",1136,1265,depends
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P4,Probability,Open to evidence,0,"range(1326, 1343)",1326,1343,depends
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P4,Probability,Open to evidence,0,"range(1348, 1375)",1348,1375,depends
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P4,Probability,Open to evidence,0,"range(1377, 1562)",1377,1562,depends
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P5,Probability,Doesn’t acknowledge uncertainty,-1.6,N,-1,-1,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P6,Probability,Inappropriate confidence,-1.6,"range(1565, 1600)",1565,1600,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P6,Probability,Inappropriate confidence,0,"range(1701, 1747)",1701,1747,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P6,Probability,Inappropriate confidence,0,"range(2054, 2129)",2054,2129,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P6,Probability,Inappropriate confidence,0,"range(2488, 2632)",2488,2632,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P6,Probability,Inappropriate confidence,0,"range(2662, 2744)",2662,2744,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P7,Probability,Doesn’t acknowledge uncertainty,-1.6,"range(1646, 1659)",1646,1659,probably will
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P8,Probability,Inappropriate confidence,-0.4,"range(1646, 1654)",1646,1654,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P8,Probability,Inappropriate confidence,0,"range(1850, 1863)",1850,1863,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P8,Probability,Inappropriate confidence,0,"range(1930, 2105)",1930,2105,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,P9,Probability,Doesn’t acknowledge uncertainty,-1.6,"range(1646, 1654)",1646,1654,probably
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R0,Reasoning,Hindsight Bias,-3.2,"range(2488, 2632)",2488,2632,"from ten to several hundred million Westerners will become infected with this disease , and the number of deaths will amount to tens of millions"
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R1,Reasoning,Misleading argument,-3.0,"range(2488, 2632)",2488,2632,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R2,Reasoning,Other misleading reasoning,-1.5,"range(2662, 2675)",2662,2675,there will be
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R2,Reasoning,Other misleading reasoning,0,"range(2715, 2728)",2715,2728,there will be
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R3,Reasoning,Misleading argument,-2.5439907196648495,"range(2662, 2675)",2662,2675,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R3,Reasoning,Misleading argument,0,"range(2715, 2728)",2715,2728,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R4,Reasoning,Stereotyping,-3.2,"range(3244, 3255)",3244,3255,US military
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R5,Reasoning,Misleading argument,-4.0,"range(3244, 3255)",3244,3255,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R6,Reasoning,Other misleading reasoning,-1.5,"range(3726, 3749)",3726,3749,It is natural to assume
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R7,Reasoning,Begging the Question,-1.3333333333333333,"range(3726, 3811)",3726,3811,It is natural to assume who will be the beneficiary of the huge profits from its sale
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R8,Reasoning,Misleading argument,-4.0,"range(3726, 3811)",3726,3811,nan
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R9,Reasoning,Equivocation,-2.5,"range(3381, 3400)",3381,3400,American scientists
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R9,Reasoning,Equivocation,0,"range(3537, 3541)",3537,3541,American scientists
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R10,Reasoning,Other logical fallacies,-3.0,"range(3340, 3344)",3340,3344,2015
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R10,Reasoning,Other logical fallacies,0,"range(3346, 3608)",3346,3608,2015
+47990959103662e94e796d979018922afddc880fb4b867c7ca2ac8aa2146e7c4,R10,Reasoning,Other logical fallacies,0,"range(3612, 3811)",3612,3811,2015
+,,,,,,,,

@@ -1,0 +1,610 @@
+,Credibility Indicator Category,Question Number,Answer Number,Point Recommendation,Credibility Indicator Name,Start,End
+89,Evidence,4,5,-4,Sample representativeness,0,0
+99,Evidence,8,1,-4,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+84,Evidence,2,9,0,Quality of evidence,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+170,Holistic,8,4,-1,Minor Bias,0,0
+72,Reasoning,7,3,-3,Misleading argument,0,0
+48,Reasoning,2,6,0,,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+94,Evidence,5,4,-2,Control condition,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+108,Evidence,10,5,0,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+151,Probability,12,5,0,Open to evidence,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+146,Probability,10,3,0,False precision,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+146,Probability,10,3,0,False precision,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+118,Probability,2,1,0,Inappropriate confidence,0,0
+146,Probability,10,3,0,False precision,0,0
+119,Probability,2,2,-0.5,Inappropriate confidence,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+146,Probability,10,3,0,False precision,0,0
+4,Language,2,5,0,Metaphor unhelpful,0,0
+23,Language,9,5,0,Inappropriate slang,0,0
+27,Language,10,4,-0.25,Denigration,0,0
+39,Language,12,1,0,Well-balanced,0,0
+2,Language,2,3,-2,Metaphor unhelpful,0,0
+23,Language,9,5,0,Inappropriate slang,0,0
+27,Language,10,4,-0.25,Denigration,0,0
+4,Language,2,5,0,Metaphor unhelpful,0,0
+39,Language,12,1,0,Well-balanced,0,0
+23,Language,9,5,0,Inappropriate slang,0,0
+27,Language,10,4,-0.25,Denigration,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+128,Probability,5,3,-2,Doesn‰Ûªt acknowledge uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+100,Evidence,8,2,-3,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+113,Evidence,11,5,0,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+108,Evidence,10,5,0,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+88,Evidence,4,4,-2,Sample representativeness,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+94,Evidence,5,4,-2,Control condition,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+108,Evidence,10,5,0,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+100,Evidence,8,2,-3,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+99,Evidence,8,1,-4,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+108,Evidence,10,5,0,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+100,Evidence,8,2,-3,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+109,Evidence,11,1,-3,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+84,Evidence,2,9,0,Quality of evidence,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+104,Evidence,10,1,-3,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+95,Evidence,5,5,-3,Control condition,0,0
+100,Evidence,8,2,-3,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+104,Evidence,10,1,-3,Statistical uncertainty,0,0
+109,Evidence,11,1,-3,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+94,Evidence,5,4,-2,Control condition,0,0
+100,Evidence,8,2,-3,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+109,Evidence,11,1,-3,Systematic uncertainty,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+117,Evidence,12,4,0,Open to evidence,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+101,Evidence,8,3,-2,Alternative explanation,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+100,Evidence,8,2,-3,Alternative explanation,0,0
+105,Evidence,10,2,-2,Statistical uncertainty,0,0
+110,Evidence,11,2,-2,Systematic uncertainty,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+87,Evidence,4,3,-1,Sample representativeness,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+107,Evidence,10,4,-0.5,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+90,Evidence,4,6,-2,Sample representativeness,0,0
+98,Evidence,6,3,-1,Randomized Assignment,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+86,Evidence,4,2,-0.5,Sample representativeness,0,0
+102,Evidence,8,4,-1,Alternative explanation,0,0
+106,Evidence,10,3,-1,Statistical uncertainty,0,0
+111,Evidence,11,3,-1,Systematic uncertainty,0,0
+116,Evidence,12,3,0,Open to evidence,0,0
+85,Evidence,4,1,0,Sample representativeness,0,0
+97,Evidence,6,2,-2,Randomized Assignment,0,0
+103,Evidence,8,5,0,Alternative explanation,0,0
+108,Evidence,10,5,0,Statistical uncertainty,0,0
+112,Evidence,11,4,-0.5,Systematic uncertainty,0,0
+76,Evidence,2,1,0,Quality of evidence,7,57
+149,Probability,12,3,1,Open to evidence,331,387
+127,Probability,5,2,0.5,Acknowledges uncertainty,343,348
+127,Probability,5,2,0.5,Acknowledges uncertainty,343,348
+126,Probability,5,1,1,Acknowledges uncertainty,343,348
+126,Probability,5,1,1,Acknowledges uncertainty,698,724
+127,Probability,5,2,0.5,Acknowledges uncertainty,711,719
+82,Evidence,2,7,0,Quality of evidence,807,1021
+82,Evidence,2,7,0,Quality of evidence,900,1021
+82,Evidence,2,7,0,Quality of evidence,920,1021
+78,Evidence,2,3,0,Quality of evidence,920,1021
+115,Evidence,12,2,1,Open to evidence,1023,1106
+114,Evidence,12,1,2,Open to evidence,1023,1163
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+114,Evidence,12,1,2,Open to evidence,1023,1106
+114,Evidence,12,1,2,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+78,Evidence,2,3,0,Quality of evidence,1023,1399
+78,Evidence,2,3,0,Quality of evidence,1023,1399
+78,Evidence,2,3,0,Quality of evidence,1023,1399
+78,Evidence,2,3,0,Quality of evidence,1023,1399
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+114,Evidence,12,1,2,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+76,Evidence,2,1,0,Quality of evidence,1023,1067
+114,Evidence,12,1,2,Open to evidence,1023,1106
+115,Evidence,12,2,1,Open to evidence,1023,1106
+114,Evidence,12,1,2,Open to evidence,1053,1106
+83,Evidence,2,8,0,Quality of evidence,1058,1060
+82,Evidence,2,7,0,Quality of evidence,1108,1136
+82,Evidence,2,7,0,Quality of evidence,1108,1143
+83,Evidence,2,8,0,Quality of evidence,1114,1136
+83,Evidence,2,8,0,Quality of evidence,1114,1143
+83,Evidence,2,8,0,Quality of evidence,1153,1176
+78,Evidence,2,3,0,Quality of evidence,1165,1197
+78,Evidence,2,3,0,Quality of evidence,1165,1399
+76,Evidence,2,1,0,Quality of evidence,1165,1399
+77,Evidence,2,2,0,Quality of evidence,1165,1399
+78,Evidence,2,3,0,Quality of evidence,1165,1399
+80,Evidence,2,5,0,Quality of evidence,1165,1399
+79,Evidence,2,4,0,Quality of evidence,1165,1399
+76,Evidence,2,1,0,Quality of evidence,1165,1937
+78,Evidence,2,3,0,Quality of evidence,1165,1399
+76,Evidence,2,1,0,Quality of evidence,1165,1399
+78,Evidence,2,3,0,Quality of evidence,1165,1417
+78,Evidence,2,3,0,Quality of evidence,1165,1176
+78,Evidence,2,3,0,Quality of evidence,1165,1266
+78,Evidence,2,3,0,Quality of evidence,1165,1197
+80,Evidence,2,5,0,Quality of evidence,1165,1197
+80,Evidence,2,5,0,Quality of evidence,1165,1197
+80,Evidence,2,5,0,Quality of evidence,1165,1266
+76,Evidence,2,1,0,Quality of evidence,1165,1399
+80,Evidence,2,5,0,Quality of evidence,1165,1937
+82,Evidence,2,7,0,Quality of evidence,1165,1197
+78,Evidence,2,3,0,Quality of evidence,1165,1560
+80,Evidence,2,5,0,Quality of evidence,1165,1937
+78,Evidence,2,3,0,Quality of evidence,1177,1197
+78,Evidence,2,3,0,Quality of evidence,1177,1186
+80,Evidence,2,5,0,Quality of evidence,1177,1197
+80,Evidence,2,5,0,Quality of evidence,1187,1197
+78,Evidence,2,3,0,Quality of evidence,1187,1197
+80,Evidence,2,5,0,Quality of evidence,1187,1266
+78,Evidence,2,3,0,Quality of evidence,1187,1197
+78,Evidence,2,3,0,Quality of evidence,1187,1189
+80,Evidence,2,5,0,Quality of evidence,1187,1245
+76,Evidence,2,1,0,Quality of evidence,1198,1399
+77,Evidence,2,2,0,Quality of evidence,1198,1399
+78,Evidence,2,3,0,Quality of evidence,1198,1399
+77,Evidence,2,2,0,Quality of evidence,1213,1266
+80,Evidence,2,5,0,Quality of evidence,1213,1399
+77,Evidence,2,2,0,Quality of evidence,1213,1266
+76,Evidence,2,1,0,Quality of evidence,1213,1226
+77,Evidence,2,2,0,Quality of evidence,1227,1304
+77,Evidence,2,2,0,Quality of evidence,1239,1266
+78,Evidence,2,3,0,Quality of evidence,1239,1245
+77,Evidence,2,2,0,Quality of evidence,1239,1266
+77,Evidence,2,2,0,Quality of evidence,1246,1266
+92,Evidence,5,2,-0.5,Control condition,1271,1399
+79,Evidence,2,4,0,Quality of evidence,1271,1304
+78,Evidence,2,3,0,Quality of evidence,1306,1399
+78,Evidence,2,3,0,Quality of evidence,1306,1399
+78,Evidence,2,3,0,Quality of evidence,1306,1399
+78,Evidence,2,3,0,Quality of evidence,1306,1377
+78,Evidence,2,3,0,Quality of evidence,1306,1399
+78,Evidence,2,3,0,Quality of evidence,1313,1490
+76,Evidence,2,1,0,Quality of evidence,1313,1387
+78,Evidence,2,3,0,Quality of evidence,1313,1399
+78,Evidence,2,3,0,Quality of evidence,1326,1399
+78,Evidence,2,3,0,Quality of evidence,1326,1377
+78,Evidence,2,3,0,Quality of evidence,1326,1399
+78,Evidence,2,3,0,Quality of evidence,1326,1399
+78,Evidence,2,3,0,Quality of evidence,1342,1429
+76,Evidence,2,1,0,Quality of evidence,1401,1937
+76,Evidence,2,1,0,Quality of evidence,1401,1490
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+77,Evidence,2,2,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1797
+76,Evidence,2,1,0,Quality of evidence,1401,1481
+79,Evidence,2,4,0,Quality of evidence,1401,1613
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+77,Evidence,2,2,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1490
+77,Evidence,2,2,0,Quality of evidence,1401,1490
+78,Evidence,2,3,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+78,Evidence,2,3,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+78,Evidence,2,3,0,Quality of evidence,1401,1429
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1490
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+76,Evidence,2,1,0,Quality of evidence,1401,1560
+79,Evidence,2,4,0,Quality of evidence,1401,1560
+77,Evidence,2,2,0,Quality of evidence,1406,1560
+78,Evidence,2,3,0,Quality of evidence,1418,1429
+80,Evidence,2,5,0,Quality of evidence,1442,1560
+79,Evidence,2,4,0,Quality of evidence,1442,1560
+80,Evidence,2,5,0,Quality of evidence,1562,1677
+80,Evidence,2,5,0,Quality of evidence,1562,1677
+77,Evidence,2,2,0,Quality of evidence,1562,1579
+80,Evidence,2,5,0,Quality of evidence,1562,1937
+77,Evidence,2,2,0,Quality of evidence,1562,1677
+92,Evidence,5,2,-0.5,Control condition,1562,1677
+80,Evidence,2,5,0,Quality of evidence,1562,1677
+91,Evidence,5,1,0,Control condition,1562,1677
+80,Evidence,2,5,0,Quality of evidence,1562,1937
+76,Evidence,2,1,0,Quality of evidence,1562,1677
+80,Evidence,2,5,0,Quality of evidence,1562,1677
+81,Evidence,2,6,0,Quality of evidence,1562,1786
+80,Evidence,2,5,0,Quality of evidence,1562,1677
+80,Evidence,2,5,0,Quality of evidence,1562,1677
+80,Evidence,2,5,0,Quality of evidence,1576,1677
+91,Evidence,5,1,0,Control condition,1576,1641
+80,Evidence,2,5,0,Quality of evidence,1576,1677
+92,Evidence,5,2,-0.5,Control condition,1576,1677
+78,Evidence,2,3,0,Quality of evidence,1576,1677
+82,Evidence,2,7,0,Quality of evidence,1576,1594
+77,Evidence,2,2,0,Quality of evidence,1580,1585
+80,Evidence,2,5,0,Quality of evidence,1580,1677
+79,Evidence,2,4,0,Quality of evidence,1580,1677
+77,Evidence,2,2,0,Quality of evidence,1586,1651
+80,Evidence,2,5,0,Quality of evidence,1586,1641
+92,Evidence,5,2,-0.5,Control condition,1586,1641
+92,Evidence,5,2,-0.5,Control condition,1607,1641
+91,Evidence,5,1,0,Control condition,1607,1641
+91,Evidence,5,1,0,Control condition,1614,1641
+91,Evidence,5,1,0,Control condition,1614,1641
+92,Evidence,5,2,-0.5,Control condition,1614,1641
+77,Evidence,2,2,0,Quality of evidence,1651,1652
+77,Evidence,2,2,0,Quality of evidence,1652,1937
+76,Evidence,2,1,0,Quality of evidence,1669,1937
+77,Evidence,2,2,0,Quality of evidence,1679,1937
+78,Evidence,2,3,0,Quality of evidence,1679,1937
+79,Evidence,2,4,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1786
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+77,Evidence,2,2,0,Quality of evidence,1679,1937
+78,Evidence,2,3,0,Quality of evidence,1679,1806
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+77,Evidence,2,2,0,Quality of evidence,1679,1937
+78,Evidence,2,3,0,Quality of evidence,1679,1937
+80,Evidence,2,5,0,Quality of evidence,1679,1937
+79,Evidence,2,4,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+77,Evidence,2,2,0,Quality of evidence,1679,1937
+80,Evidence,2,5,0,Quality of evidence,1679,1937
+80,Evidence,2,5,0,Quality of evidence,1679,1748
+80,Evidence,2,5,0,Quality of evidence,1679,1937
+81,Evidence,2,6,0,Quality of evidence,1679,1937
+91,Evidence,5,1,0,Control condition,1679,1738
+80,Evidence,2,5,0,Quality of evidence,1679,1786
+81,Evidence,2,6,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1786
+81,Evidence,2,6,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+115,Evidence,12,2,1,Open to evidence,1679,1937
+79,Evidence,2,4,0,Quality of evidence,1679,1937
+76,Evidence,2,1,0,Quality of evidence,1679,1937
+91,Evidence,5,1,0,Control condition,1679,1937
+130,Probability,7,2,-2,Numeric context,1682,1738
+145,Probability,10,2,-1,False precision,1682,1738
+76,Evidence,2,1,0,Quality of evidence,1688,1706
+76,Evidence,2,1,0,Quality of evidence,1708,1718
+81,Evidence,2,6,0,Quality of evidence,1708,1710
+79,Evidence,2,4,0,Quality of evidence,1740,1937
+115,Evidence,12,2,1,Open to evidence,1794,1806
+76,Evidence,2,1,0,Quality of evidence,1882,1937
+92,Evidence,5,2,-0.5,Control condition,1882,1937
+92,Evidence,5,2,-0.5,Control condition,1882,1937
+92,Evidence,5,2,-0.5,Control condition,1882,1890
+92,Evidence,5,2,-0.5,Control condition,1882,1937
+92,Evidence,5,2,-0.5,Control condition,1882,1937
+91,Evidence,5,1,0,Control condition,1882,1937
+80,Evidence,2,5,0,Quality of evidence,1882,1937
+76,Evidence,2,1,0,Quality of evidence,1882,1937
+92,Evidence,5,2,-0.5,Control condition,1882,1937
+115,Evidence,12,2,1,Open to evidence,1891,1937
+130,Probability,7,2,-2,Numeric context,1896,1906
+145,Probability,10,2,-1,False precision,1896,1906
+92,Evidence,5,2,-0.5,Control condition,1896,1937
+92,Evidence,5,2,-0.5,Control condition,1937,1937
+76,Evidence,2,1,0,Quality of evidence,1939,2236
+80,Evidence,2,5,0,Quality of evidence,1939,2035
+83,Evidence,2,8,0,Quality of evidence,1939,2236
+82,Evidence,2,7,0,Quality of evidence,1939,1952
+115,Evidence,12,2,1,Open to evidence,1939,1952
+130,Probability,7,2,-2,Numeric context,2004,2024
+76,Evidence,2,1,0,Quality of evidence,2037,2236
+77,Evidence,2,2,0,Quality of evidence,2098,2403
+76,Evidence,2,1,0,Quality of evidence,2123,2236
+77,Evidence,2,2,0,Quality of evidence,2163,2180
+92,Evidence,5,2,-0.5,Control condition,2186,2236
+126,Probability,5,1,1,Acknowledges uncertainty,2238,2272
+79,Evidence,2,4,0,Quality of evidence,2238,2534
+79,Evidence,2,4,0,Quality of evidence,2238,2534
+130,Probability,7,2,-2,Numeric context,2340,2347
+79,Evidence,2,4,0,Quality of evidence,2359,2403
+126,Probability,5,1,1,Acknowledges uncertainty,2536,2584
+82,Evidence,2,7,0,Quality of evidence,2536,2688
+115,Evidence,12,2,1,Open to evidence,2559,2584
+82,Evidence,2,7,0,Quality of evidence,2633,2688
+126,Probability,5,1,1,Acknowledges uncertainty,2740,2792
+126,Probability,5,1,1,Acknowledges uncertainty,2875,2902
+127,Probability,5,2,0.5,Acknowledges uncertainty,2894,2902
+127,Probability,5,2,0.5,Acknowledges uncertainty,2894,2902
+115,Evidence,12,2,1,Open to evidence,2894,2902
+115,Evidence,12,2,1,Open to evidence,3030,3035
+82,Evidence,2,7,0,Quality of evidence,3129,3195
+82,Evidence,2,7,0,Quality of evidence,3129,3316
+82,Evidence,2,7,0,Quality of evidence,3129,3195
+79,Evidence,2,4,0,Quality of evidence,3197,3307
+126,Probability,5,1,1,Acknowledges uncertainty,3246,3253
+79,Evidence,2,4,0,Quality of evidence,3318,3528
+76,Evidence,2,1,0,Quality of evidence,3375,3384
+76,Evidence,2,1,0,Quality of evidence,3375,3528
+127,Probability,5,2,0.5,Acknowledges uncertainty,3461,3466
+127,Probability,5,2,0.5,Acknowledges uncertainty,3461,3466
+126,Probability,5,1,1,Acknowledges uncertainty,3461,3474
+150,Probability,12,4,1,Open to evidence,3461,3488
+82,Evidence,2,7,0,Quality of evidence,3531,3702
+82,Evidence,2,7,0,Quality of evidence,3583,3702
+79,Evidence,2,4,0,Quality of evidence,3764,4041
+79,Evidence,2,4,0,Quality of evidence,3911,4041
+80,Evidence,2,5,0,Quality of evidence,4043,4345
+80,Evidence,2,5,0,Quality of evidence,4043,4345
+82,Evidence,2,7,0,Quality of evidence,4348,4509
+82,Evidence,2,7,0,Quality of evidence,4407,4509
+82,Evidence,2,7,0,Quality of evidence,4422,4509
+80,Evidence,2,5,0,Quality of evidence,4511,5011
+82,Evidence,2,7,0,Quality of evidence,4511,5011
+126,Probability,5,1,1,Acknowledges uncertainty,4511,4582
+78,Evidence,2,3,0,Quality of evidence,4511,5011
+126,Probability,5,1,1,Acknowledges uncertainty,4531,4549
+127,Probability,5,2,0.5,Acknowledges uncertainty,4541,4544
+133,Probability,7,5,0,Numeric context,4758,4815
+133,Probability,7,5,0,Numeric context,4806,4815
+133,Probability,7,5,0,Numeric context,4819,4995
+130,Probability,7,2,-2,Numeric context,4819,4829
+130,Probability,7,2,-2,Numeric context,4819,4829
+130,Probability,7,2,-2,Numeric context,4881,4891
+130,Probability,7,2,-2,Numeric context,4881,4891
+130,Probability,7,2,-2,Numeric context,4962,4972
+130,Probability,7,2,-2,Numeric context,4962,4972
+127,Probability,5,2,0.5,Acknowledges uncertainty,5401,5406
+126,Probability,5,1,1,Acknowledges uncertainty,5401,5406
+127,Probability,5,2,0.5,Acknowledges uncertainty,5467,5492
+127,Probability,5,2,0.5,Acknowledges uncertainty,5467,5492
+126,Probability,5,1,1,Acknowledges uncertainty,5467,5492
+149,Probability,12,3,1,Open to evidence,5467,5492
+126,Probability,5,1,1,Acknowledges uncertainty,5606,5639
+127,Probability,5,2,0.5,Acknowledges uncertainty,5633,5639
+82,Evidence,2,7,0,Quality of evidence,5700,5853
+127,Probability,5,2,0.5,Acknowledges uncertainty,5755,5768
+126,Probability,5,1,1,Acknowledges uncertainty,5755,5789
+79,Evidence,2,4,0,Quality of evidence,5855,6096
+79,Evidence,2,4,0,Quality of evidence,5859,6096
+80,Evidence,2,5,0,Quality of evidence,5954,5975
+80,Evidence,2,5,0,Quality of evidence,5954,5975
+78,Evidence,2,3,0,Quality of evidence,5954,5975
+126,Probability,5,1,1,Acknowledges uncertainty,5960,5975
+149,Probability,12,3,1,Open to evidence,5960,5975
+127,Probability,5,2,0.5,Acknowledges uncertainty,5968,5975
+126,Probability,5,1,1,Acknowledges uncertainty,5995,6037
+127,Probability,5,2,0.5,Acknowledges uncertainty,6005,6013
+127,Probability,5,2,0.5,Acknowledges uncertainty,6005,6013
+82,Evidence,2,7,0,Quality of evidence,6098,6123
+82,Evidence,2,7,0,Quality of evidence,6098,6123
+63,Reasoning,6,3,-4,Straw Man Argument,6257,6407
+82,Evidence,2,7,0,Quality of evidence,6257,6467
+82,Evidence,2,7,0,Quality of evidence,6414,6467
+82,Evidence,2,7,0,Quality of evidence,6469,6543
+127,Probability,5,2,0.5,Acknowledges uncertainty,6478,6486
+127,Probability,5,2,0.5,Acknowledges uncertainty,6478,6486
+126,Probability,5,1,1,Acknowledges uncertainty,6478,6486
+79,Evidence,2,4,0,Quality of evidence,6545,6654
+82,Evidence,2,7,0,Quality of evidence,6545,6665
+82,Evidence,2,7,0,Quality of evidence,6545,6665
+42,Language,12,4,2,Well-balanced,6668,6714
+40,Language,12,2,1,Well-balanced,6668,6714

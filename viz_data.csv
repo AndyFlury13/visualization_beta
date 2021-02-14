@@ -1,0 +1,35 @@
+Article ID,Credibility Indicator ID,Credibility Indicator Category,Credibility Indicator Name,Points,Indices of Label in Article,Start,End,target_text
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E0,Evidence,Alternative explanation,-0.8,N,-1,-1,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E1,Evidence,Statistical uncertainty,-0.4,"range(1401, 1937)",1401,1937,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E2,Evidence,Systematic uncertainty,-0.4,"range(1401, 1937)",1401,1937,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E3,Evidence,Sample representativeness,-0.4,"range(1187, 1197)",1187,1197,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E3,Evidence,Sample representativeness,0,"range(1213, 1245)",1213,1245,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E3,Evidence,Sample representativeness,0,"range(1401, 1560)",1401,1560,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E3,Evidence,Sample representativeness,0,"range(1562, 1677)",1562,1677,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E3,Evidence,Sample representativeness,0,"range(1679, 1937)",1679,1937,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E4,Evidence,Control condition,-2.4000000000000004,"range(1187, 1197)",1187,1197,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E4,Evidence,Control condition,0,"range(1213, 1245)",1213,1245,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E4,Evidence,Control condition,0,"range(1562, 1677)",1562,1677,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E4,Evidence,Control condition,0,"range(1679, 1937)",1679,1937,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E5,Evidence,Alternative explanation,-0.8,N,-1,-1,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E6,Evidence,Statistical uncertainty,-0.4,"range(1679, 1937)",1679,1937,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E7,Evidence,Systematic uncertainty,-0.4,"range(1679, 1937)",1679,1937,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E8,Evidence,Open to evidence,0.8,"range(1023, 1106)",1023,1106,Research on the psychological toll of social distancing during epidemics is limited
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E9,Evidence,Sample representativeness,-1.6,"range(1939, 2236)",1939,2236,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E10,Evidence,Alternative explanation,-0.8,N,-1,-1,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E11,Evidence,Statistical uncertainty,-0.4,"range(1953, 2403)",1953,2403,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E12,Evidence,Systematic uncertainty,-0.7567068133466861,"range(1953, 2403)",1953,2403,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,E13,Evidence,Open to evidence,0.8,"range(2559, 2584)",2559,2584,can reduce the likelihood
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,H0,Holistic,Minor Bias,-0.8,N,-1,-1,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,L0,Language,Denigration,-0.25,"range(380, 387)",380,387,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,L0,Language,Denigration,0,"range(6678, 6698)",6678,6698,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P0,Probability,Acknowledges uncertainty,0.353759374819711,"range(343, 348)",343,348,could
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P1,Probability,Acknowledges uncertainty,0.353759374819711,"range(2875, 2902)",2875,2902,research elsewhere suggests
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P2,Probability,Acknowledges uncertainty,0.8,"range(2238, 2272)",2238,2272,Certain factors increased the risk
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P3,Probability,Acknowledges uncertainty,0.353759374819711,"range(5401, 5406)",5401,5406,could
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P4,Probability,Acknowledges uncertainty,0.353759374819711,"range(5960, 5975)",5960,5975,studies suggest
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P5,Probability,Doesn’t acknowledge uncertainty,-1.2298643266317522,N,-1,-1,nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P6,Probability,Numeric context,-1.0,"range(4819, 4829)",4819,4829,26 percent
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P6,Probability,Numeric context,0,"range(4881, 4891)",4881,4891,26 percent
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P6,Probability,Numeric context,0,"range(4962, 4972)",4962,4972,26 percent
+,,,,,,,,
