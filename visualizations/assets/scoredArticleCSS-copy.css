@@ -87,7 +87,7 @@ div.pseudobox {
 
 .highlighter .highlightertext {
     visibility: hidden;
-    fit-content = min(max-content, max(min-content, fill-available));
+    fit-content: min(max-content, max(min-content, fill-available));
     text-align: center;
     font-weight: bold;
     border-radius: 15px;
@@ -161,18 +161,19 @@ div.pseudobox {
 }
 
 .sunburst {
+  display: flex;
   position: -webkit-sticky;
   position: sticky;
   top: 40px;
   left: -1000px;
-  height: 400px;
+  height: 700px;
   width: 400px;
   z-index: 0;
 }
 
 .userScore {
     position: absolute;
-    bottom: 5%;
+    top: 350px;
     left: 9%;
     font-size: 22px;
     border-radius: 5px;
@@ -184,9 +185,11 @@ div.pseudobox {
 
 
 .options {
+    position: -webkit-sticky;
+    position: sticky;
     margin-left: 2%;
-    margin-top:30px;
     font-size: 20px;
+    top: 150px;
 }
 
 #chart {
@@ -267,7 +270,7 @@ a:hover {
 }
 
 
-}
+
 
 /* Oscar and Quang End */
 
@@ -625,7 +628,7 @@ h3 {
       font-size: 32px;
       margin: 0px;
     }
-
+}
 /* Katie come back  */
 
     
@@ -635,6 +638,7 @@ h3 {
 .hide {
   opacity: 0;
   max-height: 0;
+  overflow:hidden;
 }
 
 .hidden {
@@ -727,6 +731,8 @@ h3 {
 }
 
 .dropbtn {
+  position: sticky;
+  position: -webkit-sticky;
   border-radius: 100px;
   background-color: #4d61b3;
   color: white;
@@ -735,10 +741,12 @@ h3 {
   border: none;
   font-family: 'Raleway';
   width: 200px;
+  top: 0;
 }
 
 .dropdown {
-  position: relative;
+  position: sticky;
+  position: -webkit-sticky;
   display: inline-block;
 }
 
@@ -843,7 +851,7 @@ p.p-annotate {
   padding-right: 30vw;
 }
 
-}
+
 
 
 .image-span {
@@ -1038,11 +1046,15 @@ This is mobile
 
   /*====== mobile: nav ============*/
 
-  .nav-pad {
-    padding-top: 44px;
+  .nav-pad { 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 200px;
+    width: 250px;
+    left: 100px;
+    /* padding-top: 44px; */
     background: #ffffff;
   }
-
   .nav-wrap {
     position: static;
     width: 100%;
@@ -1124,7 +1136,7 @@ This is mobile
       margin-top: 0;
   }
 
-}
+
 
 
 
@@ -1284,7 +1296,7 @@ This is mobile
  }
 
 
-}
+
 
 
 
@@ -1363,7 +1375,7 @@ This is mobile
 .span-content-wrapper{
   display: flex;
   flex-direction: column;
-  wrap: no-wrap;
+  flex-wrap: no-wrap;
   padding: 0;
 }
 
@@ -1600,7 +1612,7 @@ This is mobile
     .span-content-wrapper{
       display: flex;
       flex-direction: row;
-      wrap: wrap;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
     }
@@ -1685,7 +1697,7 @@ This is mobile
     }
 
 
-  }
+  
 
 
 
@@ -2036,7 +2048,7 @@ main {
          justify-content: flex-start;
   }
 
-}
+
 
 /* --- nav: web --- */
 

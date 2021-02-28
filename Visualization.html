@@ -139,111 +139,8 @@
     </div>
 
     <div class="nav-pad">
-        <div class="pills">
-            
-        
-        </div>
-        <div class="options">
-            <div class="dropdown">
-                <button class="dropbtn">Explore the Article</button>
-                <div class="dropdown-content">
-                    <button class = "button_three" id = "button_three"> Article Elements</button>
-                    <div class="hide">
-                    Which sections of this article are  arguments, quoted sources or assertions? Which sections need fact checking?</div>
-                    <button class = "button_two" id = "button_two">Your Contribution</button>
-                    <div class="hide">
-                      What is your contribution to this article? What highlights and points did you give this article?
-                    </div>
-                    
-                    <input type="text" class='hidden' id="userid" placeholder="User ID">
-                    <div class='hidden' id='errormsg'>
-                      Invalid USERID
-                    </div>
-                    <button class = "button_one" id = "button_one">Classic View</button>
-                    <div class="hide" id="classic">How does the Public Editor algorithm evaluate this article?</div>
-                  </div>
-            </div>
-        </div>
-            <p id="demo"></p>
 
-            <script>
-                var button_one = document.getElementById("button_one")
-                var button_two = document.getElementById("button_two")
-                var button_three = document.getElementById("button_three")
-                var input = document.getElementById('userid')
-                var userIDs = ['1234', '5678', '9012']
-                button_one.onclick = function() {
-                  document.querySelector('#userid').setAttribute('class', 'hidden');
-                  document.querySelector('#errormsg').setAttribute('class', 'hidden');
-                  sunburst = $(".userScore");
-                  sunburst.css("display", "none");
-                  this.style.opacity = 1
-                  button_two.style.opacity = 0.6
-                  button_three.style.opacity = 0.6
-                  d3.text(TEXT_FILE_URL, function(text) {
-                    document.getElementById("textArticle").innerHTML = text.toString();
-                    d3.csv(DATA_FILE_URL, function(error, data) {
-                      if (error) throw error;
-                      createHighlights(data, text.toString());   
-                  });
-                });
-                }
-                input.addEventListener("keyup", e => {
-                  if (e.keyCode === 13) {
-                    console.log(input.value)
-                    var userid = input.value
-                    if (!userIDs.includes(userid)) {
-                      console.log("Invalid USERID")
-                      document.querySelector('#errormsg').setAttribute('class', 'shown');
-                    }
-                    else {
-                      document.querySelector('#errormsg').setAttribute('class', 'hidden');
-                      // Implement USERID lookup here.
-                      sunburst = $(".userScore");
-                  sunburst.css("display", "block");
-                  d3.text(TEXT_FILE_URL, function(text) {
-                  document.getElementById("textArticle").innerHTML = text.toString();
-                  d3.csv(USER_FILE_URL, function(error, data) {
-                    if (error) throw error;
-                    createFormHighlights(data, text.toString(), false);   
-                          });
-                      });
-                    }
-                    input.value = ""
-                  }
-                })
-                button_two.onclick = function() {
-                  document.querySelector('#userid').setAttribute('class', 'userform');
-                  this.style.opacity = 1
-                  button_one.style.opacity = 0.6
-                  button_three.style.opacity = 0.6
-                  // sunburst = $(".userScore");
-                  // sunburst.css("display", "block");
-            //       d3.text(TEXT_FILE_URL, function(text) {
-            //  document.getElementById("textArticle").innerHTML = text.toString();
-            //  d3.csv(USER_FILE_URL, function(error, data) {
-            //    if (error) throw error;
-            //    createFormHighlights(data, text.toString(), false);   
-            //         });
-            //     });
-                }
-                button_three.onclick = function() {
-                  document.querySelector('#userid').setAttribute('class', 'hidden');
-                  document.querySelector('#errormsg').setAttribute('class', 'hidden');
-                  sunburst = $(".userScore");
-                  sunburst.css("display", "none");
-                  this.style.opacity = 1
-                  button_one.style.opacity = 0.6
-                  button_two.style.opacity = 0.6
-                  d3.text(TEXT_FILE_URL, function(text) {
-                  document.getElementById("textArticle").innerHTML = text.toString();
-                  d3.csv(FORM_FILE_URL, function(error, data) {
-                    if (error) throw error;
-                    createFormHighlights(data, text.toString(), true);   //might not be able to use formHighlights for the user file...have to see
-                    });
-                  });
-                }
-            </script>
+            
             
 <!--
             
@@ -255,11 +152,113 @@
             </select>
 -->
         </div>
+        
         <!-- Grid start -->
         <div class="homepage-section">
+          
             <div class="categories" id="categories">
+              
                 <!-- <h2 class="dropTitle">Categories</h2> -->
-                <div class="extra-small-space"></div>
+                <div class="options">
+                  <div class="dropdown">
+                      <button class="dropbtn">Explore the Article</button>
+                      <div class="dropdown-content">
+                          <button type ="button" class = "button_three" id = "button_three"> Article Elements</button>
+                          <div class="hide">
+                          Which sections of this article are  arguments, quoted sources or assertions? Which sections need fact checking?</div>
+                          <button type ="button" class = "button_two" id = "button_two">Your Contribution</button>
+                          <div class="hide">
+                            What is your contribution to this article? What highlights and points did you give this article?
+                          </div>
+                          
+                          <input type="text" class='hidden' id="userid" placeholder="User ID" autocomplete="off">
+                          <div class='hidden' id='errormsg'>
+                            Invalid USERID
+                          </div>
+                          <button type ="button" class = "button_one" id = "button_one">Classic View</button>
+                          <div class="hide" id="classic">How does the Public Editor algorithm evaluate this article?</div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    var button_one = document.getElementById("button_one")
+                    var button_two = document.getElementById("button_two")
+                    var button_three = document.getElementById("button_three")
+                    var input = document.getElementById('userid')
+                    var userIDs = ['1234', '5678', '9012']
+                    button_one.onclick = function() {
+                      document.querySelector('#userid').setAttribute('class', 'hidden');
+                      document.querySelector('#errormsg').setAttribute('class', 'hidden');
+                      sunburst = $(".userScore");
+                      sunburst.css("display", "none");
+                      this.style.opacity = 1
+                      button_two.style.opacity = 0.6
+                      button_three.style.opacity = 0.6
+                      d3.text(TEXT_FILE_URL, function(text) {
+                        document.getElementById("textArticle").innerHTML = text.toString();
+                        d3.csv(DATA_FILE_URL, function(error, data) {
+                          if (error) throw error;
+                          createHighlights(data, text.toString());   
+                      });
+                    });
+                    }
+                    input.addEventListener("keyup", e => {
+                      if (e.keyCode === 13) {
+                        console.log(input.value)
+                        var userid = input.value
+                        if (!userIDs.includes(userid)) {
+                          console.log("Invalid USERID")
+                          document.querySelector('#errormsg').setAttribute('class', 'shown');
+                        }
+                        else {
+                          document.querySelector('#errormsg').setAttribute('class', 'hidden');
+                          // Implement USERID lookup here.
+                          sunburst = $(".userScore");
+                      sunburst.css("display", "block");
+                      d3.text(TEXT_FILE_URL, function(text) {
+                      document.getElementById("textArticle").innerHTML = text.toString();
+                      d3.csv(USER_FILE_URL, function(error, data) {
+                        if (error) throw error;
+                        createFormHighlights(data, text.toString(), false);   
+                              });
+                          });
+                        }
+                        input.value = ""
+                      }
+                    })
+                    button_two.onclick = function() {
+                      document.querySelector('#userid').setAttribute('class', 'userform');
+                      this.style.opacity = 1
+                      button_one.style.opacity = 0.6
+                      button_three.style.opacity = 0.6
+                      // sunburst = $(".userScore");
+                      // sunburst.css("display", "block");
+                //       d3.text(TEXT_FILE_URL, function(text) {
+                //  document.getElementById("textArticle").innerHTML = text.toString();
+                //  d3.csv(USER_FILE_URL, function(error, data) {
+                //    if (error) throw error;
+                //    createFormHighlights(data, text.toString(), false);   
+                //         });
+                //     });
+                    }
+                    button_three.onclick = function() {
+                      document.querySelector('#userid').setAttribute('class', 'hidden');
+                      document.querySelector('#errormsg').setAttribute('class', 'hidden');
+                      sunburst = $(".userScore");
+                      sunburst.css("display", "none");
+                      this.style.opacity = 1
+                      button_one.style.opacity = 0.6
+                      button_two.style.opacity = 0.6
+                      d3.text(TEXT_FILE_URL, function(text) {
+                      document.getElementById("textArticle").innerHTML = text.toString();
+                      d3.csv(FORM_FILE_URL, function(error, data) {
+                        if (error) throw error;
+                        createFormHighlights(data, text.toString(), true);   //might not be able to use formHighlights for the user file...have to see
+                        });
+                      });
+                    }
+                </script>
             </div>
 
 
@@ -275,6 +274,7 @@
 
             <!-- Cred score begin -->
             <div class="cred-score-container">
+              
                 <script type="text/javascript">
                   var textFileUrl = "$ARTICLE_TEXT_URL";
                   var dataFileUrl = "$DATA_CSV_URL";
@@ -290,11 +290,13 @@
                     
                   <svg id="chart">
                   </svg>
+                  
                   <div class="userScore">
                       Your score for this highlight:
                   </div>
-                    
+
                 </div>
+                
                 <script type="text/javascript">hallmark(dataFileUrl);</script>
             
                 
@@ -304,7 +306,7 @@
 
         </div>
         <!-- Grid end -->
-
+        
         <div class="small-space"></div>
 
         <!-- Footer -->

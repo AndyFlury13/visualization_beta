@@ -83,7 +83,9 @@ function condense(d, pills_map) {
 
 
 function drawPills(pills_map) {
-    var pills_div = $(".pills")[0];
+    // var pills_div = $(".pills")[0];
+    var pills_div = document.getElementsByClassName('sunburst')[0];
+    var new_div = document.createElement('div');
     //console.log(pill_div);
     var div_string = '';
     var entry;
@@ -92,14 +94,16 @@ function drawPills(pills_map) {
         var categoryInitial = entry[0].substring(entry[0].length - 1, entry[0].length);
         var score = entry[1];
         var color = colorFinderPills(categoryInitial);
-        var style_string = "style = 'background-color:" +color+"; width:130px; color:#ffffff;height:45px;border-radius: 25px; display: inline-table; margin:3px;padding:5px;vertical-align:bottom;'"
+        var style_string = "style = 'background-color:" +color+"; width:130px; color:#ffffff;height:45px;border-radius: 25px; display: inline-table; margin:3px;padding:5px;vertical-align:bottom; position: relative; top: 400px;  transform: translate(40%, 0%)'"
         var class_string = "class='" + entry[0] + "'";
         var java_string = "onmouseover='pillMouseover(" + Math.round(score) + ");' onmouseleave='pillMouseleave();'";
         var pill_div = "<div " + class_string + " " + style_string + " " + java_string + "><h5 style='font-size:13px;display: table-cell;vertical-align:middle; text-align:center;'>" + label+"</h5></div>";
         
         div_string += pill_div;
     }
-    pills_div.innerHTML = div_string;
+    new_div.innerHTML = div_string;
+    pills_div.appendChild(new_div);
+    // pills_div.innerHTML = div_string;
     
 }
 

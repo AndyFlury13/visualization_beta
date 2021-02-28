@@ -32,4 +32,6 @@ Article ID,Credibility Indicator ID,Credibility Indicator Category,Credibility I
 4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P6,Probability,Numeric context,-1.0,"range(4819, 4829)",4819,4829,26 percent
 4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P6,Probability,Numeric context,0,"range(4881, 4891)",4881,4891,26 percent
 4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,P6,Probability,Numeric context,0,"range(4962, 4972)",4962,4972,26 percent
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,H0,Probability,Numeric context,0,"N",-1,-1, nan
+4b537e0ed21179a29ed28da28057d338e67330ae12123ccceba6724f35bd68a4,H1,Probability,AwesomeSauce,0,"N",-1,-1, nan
 ,,,,,,,,
