@@ -124,7 +124,7 @@ div.pseudobox {
 .svg-content {
     display: inline-block;
     position: absolute;
-    
+
     top: 0;
     left: 0;
 }
@@ -631,10 +631,10 @@ h3 {
 }
 /* Katie come back  */
 
-    
-    
+
+
 /*Explore the article dropwdown style */
-    
+
 .hide {
   opacity: 0;
   max-height: 0;
@@ -772,7 +772,7 @@ h3 {
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #4d61b3;}
-    
+
 /** End Explore the Article section **/
 
 p.p-explain {
@@ -2012,7 +2012,7 @@ main {
     top: 5%;
     height: inherit;
     width: inherit;
-    
+
 }
 
 .description_sponsor {
@@ -2021,7 +2021,7 @@ main {
     top:5%;
     height:inherit;
     width: inherit;
-    
+
 }
 
 .links_1 {
@@ -2034,7 +2034,7 @@ main {
     position: absolute;
     right: 20px;
     width:140px;
-    
+
 }
 
 /* = header ========= */
