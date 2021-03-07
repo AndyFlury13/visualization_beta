@@ -166,7 +166,7 @@ div.pseudobox {
   position: sticky;
   top: 40px;
   left: -1000px;
-  height: 700px;
+  /* height: 700px; */
   width: 400px;
   z-index: 0;
 }
@@ -187,7 +187,7 @@ div.pseudobox {
 .options {
     position: -webkit-sticky;
     position: sticky;
-    margin-left: 2%;
+    margin-left: 10%;
     font-size: 20px;
     top: 150px;
 }
