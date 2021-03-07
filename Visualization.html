@@ -141,12 +141,12 @@
     <div class="nav-pad">
 
     </div>
-        
+
         <!-- Grid start -->
         <div class="homepage-section">
-          
+
             <div class="categories" id="categories">
-              
+
                 <!-- <h2 class="dropTitle">Categories</h2> -->
                 <div class="options">
                   <div class="dropdown">
@@ -159,7 +159,7 @@
                           <div class="hide">
                             What is your contribution to this article? What highlights and points did you give this article?
                           </div>
-                          
+
                           <input type="text" class='hidden' id="userid" placeholder="User ID" autocomplete="off">
                           <div class='hidden' id='errormsg'>
                             Invalid USERID
@@ -188,7 +188,7 @@
                         document.getElementById("textArticle").innerHTML = text.toString();
                         d3.csv(DATA_FILE_URL, function(error, data) {
                           if (error) throw error;
-                          createHighlights(data, text.toString());   
+                          createHighlights(data, text.toString());
                       });
                     });
                     }
@@ -209,7 +209,7 @@
                       document.getElementById("textArticle").innerHTML = text.toString();
                       d3.csv(USER_FILE_URL, function(error, data) {
                         if (error) throw error;
-                        createFormHighlights(data, text.toString(), false);   
+                        createFormHighlights(data, text.toString(), false);
                               });
                           });
                         }
@@ -221,15 +221,6 @@
                       this.style.opacity = 1
                       button_one.style.opacity = 0.6
                       button_three.style.opacity = 0.6
-                      // sunburst = $(".userScore");
-                      // sunburst.css("display", "block");
-                //       d3.text(TEXT_FILE_URL, function(text) {
-                //  document.getElementById("textArticle").innerHTML = text.toString();
-                //  d3.csv(USER_FILE_URL, function(error, data) {
-                //    if (error) throw error;
-                //    createFormHighlights(data, text.toString(), false);   
-                //         });
-                //     });
                     }
                     button_three.onclick = function() {
                       document.querySelector('#userid').setAttribute('class', 'hidden');
@@ -263,14 +254,14 @@
 
             <!-- Cred score begin -->
             <div class="cred-score-container">
-              
+
                 <script type="text/javascript">
                   var textFileUrl = "$ARTICLE_TEXT_URL";
                   var dataFileUrl = "$DATA_CSV_URL";
                   textFileUrl = "article.txt";
                   dataFileUrl =  "viz_data.csv";
-                  formFileUrl = "VisualizationData_100059.csv";
-                  var userFileUrl = "100059_00f548b7-6b63-4b47-828e-8e416b6ca0e2_user_contributions.csv";
+                  formFileUrl = "data/eta_forms/100059.csv";
+                  var userFileUrl = "data/eta_datahunts/100059_00f548b7-6b63-4b47-828e-8e416b6ca0e2_user_contributions.csv";
                   import("/visualizations/assets/createHighlights.js").then(scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl));
 
 
@@ -279,13 +270,13 @@
 
                   <svg id="chart">
                   </svg>
-                  
+
                   <div class="userScore">
                       Your score for this highlight:
                   </div>
 
                 </div>
-                
+
                 <script type="text/javascript">hallmark(dataFileUrl);</script>
 
 
@@ -295,7 +286,7 @@
 
         </div>
         <!-- Grid end -->
-        
+
         <div class="small-space"></div>
 
         <!-- Footer -->
