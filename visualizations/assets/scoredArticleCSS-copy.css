@@ -173,7 +173,7 @@ div.pseudobox {
 
 .userScore {
     position: absolute;
-    top: 350px;
+    top: 345px;
     left: 9%;
     font-size: 22px;
     border-radius: 5px;
@@ -1046,7 +1046,7 @@ This is mobile
 
   /*====== mobile: nav ============*/
 
-  .nav-pad { 
+  .nav-pad {
     position: -webkit-sticky;
     position: sticky;
     top: 200px;
@@ -1697,7 +1697,7 @@ This is mobile
     }
 
 
-  
+
 
 
 
