@@ -204,18 +204,20 @@
                           document.querySelector('#errormsg').setAttribute('class', 'hidden');
                           // Implement USERID lookup here.
                           sunburst = $(".userScore");
-                      sunburst.css("display", "block");
-                      d3.text(TEXT_FILE_URL, function(text) {
-                      document.getElementById("textArticle").innerHTML = text.toString();
-                      d3.csv(USER_FILE_URL, function(error, data) {
-                        if (error) throw error;
-                        createFormHighlights(data, text.toString(), false);
+                          sunburst.slideDown();
+                          //sunburst.css("display", "block");
+
+                          d3.text(TEXT_FILE_URL, function(text) {
+                            document.getElementById("textArticle").innerHTML = text.toString();
+                            d3.csv(USER_FILE_URL, function(error, data) {
+                              if (error) throw error;
+                                createFormHighlights(data, text.toString(), false);
                               });
                           });
                         }
                         input.value = ""
                       }
-                    })
+                    });
                     button_two.onclick = function() {
                       document.querySelector('#userid').setAttribute('class', 'userform');
                       this.style.opacity = 1
