@@ -15,6 +15,8 @@ def home():
 def login():
    message = None
    if request.method == 'POST':
+        print(request.form['mydata'])
+
         if 'mydata' in request.form:
             tabURL = request.form['mydata']
             result = str(score(tabURL)) #What gets returned to Javascript

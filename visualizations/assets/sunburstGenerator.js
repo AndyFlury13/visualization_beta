@@ -68,11 +68,11 @@ var visualizationOn = false;
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
-    
+
 var pseudobox = d3.select("body").append("div")
     .attr("class", "pseudobox")
     .style("opacity", 1);
-    
+
 DIV = div;
 
 PSEUDOBOX = pseudobox;
@@ -94,7 +94,7 @@ d3.csv(dataFileName, function(error, data) {
   var pillscore = 0;
   //console.log("this should be 2nd");
   for (entry of PILLS_MAP) {
-    
+
       pillscore += Math.round(parseFloat(entry[1]));
   }
   //console.log(PILLS_MAP);
@@ -102,7 +102,7 @@ d3.csv(dataFileName, function(error, data) {
   totalScore = 100 + scoreSum(root) + pillscore;
     //console.log(root);
     root.sum(function(d) {
-    
+
     return Math.abs(parseFloat(d.data.Points));
   });
 
@@ -114,7 +114,7 @@ svg.selectAll("g")
       .style("fill", function(d) {
         nodeToPath.set(d, this)
         return color(d.data.data["Credibility Indicator Category"]);
-      }) 
+      })
 
 //Setting the center circle to the score
 svg.selectAll(".center-text")
@@ -181,8 +181,8 @@ svg.selectAll("path")
         scrolltoView(d);
     })
     .style("fill", colorFinderSun);
-    
-}); 
+
+});
 d3.select(self.frameElement).style("height", height + "px");
 
 }
@@ -336,9 +336,9 @@ function drawVis(d, root, me, div) {
         //console.log(d);
         let textToHighlight = document.getElementsByName(d.data.data["Credibility Indicator ID"] +"-" + d.data.data["Credibility Indicator Name"] + "-" + d.data.data.Start + "-" + d.data.data.End);
         if (d.data.data.Start == -1) {
-          console.log("This fallacy does not have a highlight in the article body.");   
+          console.log("This fallacy does not have a highlight in the article body.");
         } else {
-            
+
             highlightSun(textToHighlight[0]);
         }
     }

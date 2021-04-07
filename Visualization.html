@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,800" rel="stylesheet" type='text/css'>
 
     <!-- Relative Stylesheets -->
-    <link rel="stylesheet" href="/visualizations/assets/scoredArticleCSS-copy.css">
+    <link rel="stylesheet" href="/visualizations/assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="/visualizations/assets/dataConverter.js"></script>
     <script type="text/javascript" src = "/visualizations/assets/embedder.js"></script>
     <script type="text/javascript" src="/visualizations/assets/switchVis.js"></script>
+    <script type="text/javascript" src ="/visualizations/assets/eta.js"></script>
 
     <!-- Squarespace section -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,700|Raleway:400"/>
@@ -189,8 +190,8 @@
                         d3.csv(DATA_FILE_URL, function(error, data) {
                           if (error) throw error;
                           createHighlights(data, text.toString());
+                        });
                       });
-                    });
                     }
                     input.addEventListener("keyup", e => {
                       if (e.keyCode === 13) {
@@ -218,12 +219,14 @@
                         input.value = ""
                       }
                     });
+
                     button_two.onclick = function() {
                       document.querySelector('#userid').setAttribute('class', 'userform');
-                      this.style.opacity = 1
-                      button_one.style.opacity = 0.6
-                      button_three.style.opacity = 0.6
+                      this.style.opacity = 1;
+                      button_one.style.opacity = 0.6;
+                      button_three.style.opacity = 0.6;
                     }
+
                     button_three.onclick = function() {
                       document.querySelector('#userid').setAttribute('class', 'hidden');
                       document.querySelector('#errormsg').setAttribute('class', 'hidden');
@@ -233,13 +236,20 @@
                       button_one.style.opacity = 0.6
                       button_two.style.opacity = 0.6
                       d3.text(TEXT_FILE_URL, function(text) {
-                      document.getElementById("textArticle").innerHTML = text.toString();
-                      d3.csv(FORM_FILE_URL, function(error, data) {
-                        if (error) throw error;
-                        createFormHighlights(data, text.toString(), true);   //might not be able to use formHighlights for the user file...have to see
+                        document.getElementById("textArticle").innerHTML = text.toString();
+
+                        runPyScript("Hello world")
+                        d3.csv(DATA_FILE_URL, function(error, data) {
+                          if(error) throw error;
+                          article_id = data[0]['Article ID']
+                          runPyScript(article_id)
+                        });
+                        d3.csv(FORM_FILE_URL, function(error, data) {
+                          if (error) throw error;
+                          createFormHighlights(data, text.toString(), true);   //might not be able to use formHighlights for the user file...have to see
                         });
                       });
-                    }
+                    };
                 </script>
             </div>
 
