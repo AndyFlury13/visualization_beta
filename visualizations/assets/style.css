@@ -166,7 +166,7 @@ div.pseudobox {
   position: sticky;
   top: 80px;
   left: -1000px;
-  /* height: 700px; */
+  height: 800px;
   width: 400px;
   z-index: 0;
 }
@@ -174,17 +174,19 @@ div.pseudobox {
 #popup {
   height: 25px;
   width: 25px;
+  bottom: 370px;
+  right: 8px;
   border-radius: 50%;
   z-index: 1;
-  position: relative;
+  position: absolute;
 }
 
 .modal {
   display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
   z-index: 2; /* Sit on top */
-  left: 0;
-  top: 0;
+  bottom: 0;
+  right: 0;
   width: 100%; /* Full width */
   height: auto; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -693,7 +695,7 @@ h3 {
 
 .shown {
   display: inline-block;
-  color: red;
+  color: #bd1313;
 }
 
 .userform {
