@@ -16,9 +16,18 @@ def login():
    message = None
    print(request.args)
    if request.method == 'POST':
-        print(request.form['mydata'])
-
-        result="hello"
+        if len(request.form) > 0:
+            print(request.form)
+            article_sha256 = request.form['article_sha256']
+            user_id = request.form['user_id']
+            if request.form['form'] == 'true':
+                ## Datahunt_aggregate.py call here
+                result='df here'
+            else:
+                ## Form_aggregate.py call here
+                result='df here'
+        else:
+            result='null call'
         resp = make_response(result)
         resp.headers['Content-Type'] = "application/json"
         return resp

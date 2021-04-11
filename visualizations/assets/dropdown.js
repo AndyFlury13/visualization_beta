@@ -28,6 +28,13 @@ window.addEventListener("DOMContentLoaded", function () {
     if (e.keyCode === 13) {
       console.log(input.value);
       var userid = input.value;
+
+      d3.csv(DATA_FILE_URL, function(error, data) { 
+        if (error) throw error;
+        article_sha256 = data[0]['Article ID'];
+        runPyScript(article_sha256, userid, false);
+      });
+
       if (!userIDs.includes(userid)) {
         console.log("Invalid USERID");
         document.querySelector('#errormsg').setAttribute('class', 'shown');
@@ -37,6 +44,7 @@ window.addEventListener("DOMContentLoaded", function () {
         sunburst = $(".userScore");
         sunburst.slideDown();
         //sunburst.css("display", "block");
+
 
         d3.text(TEXT_FILE_URL, function(text) {
           document.getElementById("textArticle").innerHTML = text.toString();
@@ -63,7 +71,16 @@ window.addEventListener("DOMContentLoaded", function () {
     this.style.opacity = 1;
     button_one.style.opacity = 0.6;
     button_two.style.opacity = 0.6;
-    
+    var article_sha256;
+
+    d3.csv(DATA_FILE_URL, function(error, data) {
+      if (error) throw error;
+      article_sha256 = data[0]['Article ID'];
+      runPyScript(article_sha256, null, true);
+    });
+
+
+
     d3.text(TEXT_FILE_URL, function(text) {
       document.getElementById("textArticle").innerHTML = text.toString();
       d3.csv(FORM_FILE_URL, function(error, data) {
