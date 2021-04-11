@@ -14,6 +14,7 @@ def home():
 @cross_origin()
 def login():
    message = None
+   print(request.args)
    if request.method == 'POST':
         if 'mydata' in request.form:
             tabURL = request.form['mydata']
