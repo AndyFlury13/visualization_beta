@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
   //HARD CODED
 
   button_one.onclick = function() {
+    $("#chart").css("opacity", 1);
     document.querySelector('#userid').setAttribute('class', 'hidden');
     document.querySelector('#errormsg').setAttribute('class', 'hidden');
     sunburst = $(".userScore");
@@ -29,7 +30,7 @@ window.addEventListener("DOMContentLoaded", function () {
       console.log(input.value);
       var userid = input.value;
 
-      d3.csv(DATA_FILE_URL, function(error, data) { 
+      d3.csv(DATA_FILE_URL, function(error, data) {
         if (error) throw error;
         article_sha256 = data[0]['Article ID'];
         runPyScript(article_sha256, userid, false);
@@ -38,6 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
       if (!userIDs.includes(userid)) {
         console.log("Invalid USERID");
         document.querySelector('#errormsg').setAttribute('class', 'shown');
+        $("#chart").css("opacity", .2);
       } else {
         document.querySelector('#errormsg').setAttribute('class', 'hidden');
         // Implement USERID lookup here.
@@ -64,6 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
     button_three.style.opacity = 0.6;
   }
   button_three.onclick = function() {
+    $("#chart").css("opacity", .2);
     document.querySelector('#userid').setAttribute('class', 'hidden');
     document.querySelector('#errormsg').setAttribute('class', 'hidden');
     sunburst = $(".userScore");
