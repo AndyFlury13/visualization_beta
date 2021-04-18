@@ -3,8 +3,13 @@ window.addEventListener("DOMContentLoaded", function () {
   var button_two = document.getElementById("button_two");
   var button_three = document.getElementById("button_three");
   var input = document.getElementById('userid')
+
+  // HARD CODED
   var userIDs = ['1234', '5678', '9012']
+  //HARD CODED
+
   button_one.onclick = function() {
+    $("#chart").css("opacity", 1);
     document.querySelector('#userid').setAttribute('class', 'hidden');
     document.querySelector('#errormsg').setAttribute('class', 'hidden');
     sunburst = $(".userScore");
@@ -24,16 +29,24 @@ window.addEventListener("DOMContentLoaded", function () {
     if (e.keyCode === 13) {
       console.log(input.value);
       var userid = input.value;
+
+      d3.csv(DATA_FILE_URL, function(error, data) {
+        if (error) throw error;
+        article_sha256 = data[0]['Article ID'];
+        runPyScript(article_sha256, userid, false);
+      });
+
       if (!userIDs.includes(userid)) {
         console.log("Invalid USERID");
         document.querySelector('#errormsg').setAttribute('class', 'shown');
-      }
-      else {
+        $("#chart").css("opacity", .2);
+      } else {
         document.querySelector('#errormsg').setAttribute('class', 'hidden');
         // Implement USERID lookup here.
         sunburst = $(".userScore");
         sunburst.slideDown();
         //sunburst.css("display", "block");
+
 
         d3.text(TEXT_FILE_URL, function(text) {
           document.getElementById("textArticle").innerHTML = text.toString();
@@ -53,6 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
     button_three.style.opacity = 0.6;
   }
   button_three.onclick = function() {
+    $("#chart").css("opacity", .2);
     document.querySelector('#userid').setAttribute('class', 'hidden');
     document.querySelector('#errormsg').setAttribute('class', 'hidden');
     sunburst = $(".userScore");
@@ -60,11 +74,21 @@ window.addEventListener("DOMContentLoaded", function () {
     this.style.opacity = 1;
     button_one.style.opacity = 0.6;
     button_two.style.opacity = 0.6;
+    var article_sha256;
+
+    d3.csv(DATA_FILE_URL, function(error, data) {
+      if (error) throw error;
+      article_sha256 = data[0]['Article ID'];
+      runPyScript(article_sha256, null, true);
+    });
+
+
+
     d3.text(TEXT_FILE_URL, function(text) {
       document.getElementById("textArticle").innerHTML = text.toString();
       d3.csv(FORM_FILE_URL, function(error, data) {
         if (error) throw error;
-        createFormHighlights(data, text.toString(), true);   //might not be able to use formHighlights for the user file...have to see
+        createFormHighlights(data, text.toString(), true);
       });
     });
   }

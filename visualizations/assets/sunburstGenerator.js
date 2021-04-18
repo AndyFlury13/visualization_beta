@@ -87,9 +87,9 @@ function hallmark(dataFileName) {
     var PILLS_MAP = new Map();
     condense(root, PILLS_MAP);
     drawPills(PILLS_MAP);
-    var sunburst_div = document.getElementsByClassName('sunburst')[0]
-    var newheight = sunburst_div.clientHeight + document.getElementById('chart').clientHeight;
-    sunburst_div.style.height = newheight.toString() + "px";
+    // var sunburst_div = document.getElementsByClassName('sunburst')[0]
+    // var newheight = sunburst_div.clientHeight + document.getElementById('chart').clientHeight;
+    // sunburst_div.style.height = newheight.toString() + "px";
     ROOT = root;
     var entry;
     var pillscore = 0;
