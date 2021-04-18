@@ -14,7 +14,7 @@
 # 
 # Currently, this datahunt files only contain useful information about article 100059
 
-# In[4]:
+# In[1]:
 
 
 import json
@@ -29,9 +29,6 @@ from collections import Counter
 
 # Read in all the datahunt files from the datahunt folder.
 
-# In[2]:
-
-
 path =  'datahunts'
 all_files = glob.glob(path + "/*.csv")
 
@@ -44,19 +41,9 @@ for filename in all_files:
 raw_data = pd.concat(li, axis=0, ignore_index=True)
 
 
-# In[11]:
-
-
-raw_data['article_number'].unique()
-
-
-# In[4]:
-
-
 if not (raw_data[(raw_data["start_pos"] == -1) & (raw_data["end_pos"] == -1)].head()).empty:
     print('Warning: there are rows in this file that have invalid start and end indices.'+
           'This means their data may correspond to invalid sections of the article.')
-
 
 # ## Branch 1
 
@@ -70,43 +57,17 @@ if not (raw_data[(raw_data["start_pos"] == -1) & (raw_data["end_pos"] == -1)].he
 # * start of highlight in the article
 # * end of highlight in the article
 
-# In[5]:
-
-
-clean_data = raw_data[["contributor_uuid", "article_sha256", "article_number", "question_text", "answer_text", "start_pos", "end_pos"]]
-clean_data.head(3)
-
-
-# ## Select Functions
-
-# In[161]:
-
-
 # Selects rows with the inputted user_id. 
 def select_user_id(df, user_id):
     return df[df["contributor_uuid"] == user_id]
-
-
-# In[162]:
-
 
 # Selects rows with the inputted article_id. 
 def select_article_id(df, article_id):
     return df[df["article_number"] == article_id]
 
-
-# In[163]:
-
-
 # Takes out invalid start_pos and end_pos indices from the dataframe. 
 def select_valid_indices(df):
     return df[(df["start_pos"] != 0) | (df["start_pos"] != -1) | (df["end_pos"] != 0) | (df["start_pos"] != -1)]
-
-
-# ## Convert to CSV
-
-# In[164]:
-
 
 # Converts dataframe to CSV.
 def convert_to_csv(df, category, arg):
@@ -126,9 +87,6 @@ def convert_to_csv(df, category, arg):
     df.to_csv("aggregate_datahunts/" + name + "_user_contributions.csv")
 
 
-# In[165]:
-
-
 # Converts dataframe to CSV, putting article_number and contributor_uuid in the name. 
 def convert_to_csv_user_article(df, user_id, article_id):
     df = select_user_id(df, user_id)
@@ -137,19 +95,11 @@ def convert_to_csv_user_article(df, user_id, article_id):
     name = str(df["article_number"][0]) + "_" + str(df["contributor_uuid"][0])
     df.to_csv("aggregate_datahunts/" + name + "_user_contributions.csv")
 
-
-
 # ## Branch 2
 # ### Points based on Topic Name, Question Number, Answer Number
 
-# In[6]:
-
 
 weight_key = pd.read_csv('weight_key.csv')
-
-
-# In[26]:
-
 
 """
 create_eta_datahunt will create Explore The Article datahunt csvs containing the 
@@ -161,8 +111,8 @@ predicted individual contribution for each question asked by Tagworks.
     @return: None. Writes a dataframe of the proper format to be fed into Visualization.html. Contains the predicted point values and labels for the individual contributions to Tagworks. This csv file is in eta_datahunts.
 
 """
-def create_eta_datahunt(raw_data, weight_key, article_number, contributor_id):
-    raw_data = raw_data.loc[raw_data["article_number"] == article_number]
+def create_eta_datahunt(raw_data, weight_key, article_sha256, contributor_id):
+    raw_data = raw_data.loc[raw_data["article_sha256"] == article_sha256]
     if raw_data.empty:
         new_df = pd.DataFrame([["no_article", 0, 0, 0, 0, 0, 0]], columns=['Credibility Indicator Category', 'Question Number', 'Answer Number','Point Recommendation', 'Credibility Indicator Name', 'Start', 'End'])
     else:
@@ -177,13 +127,11 @@ def create_eta_datahunt(raw_data, weight_key, article_number, contributor_id):
                     continue
                 else:
                     new_df = new_df.append(new_row)
-    new_df.to_csv("eta_datahunts/" + str(article_number) + "_" +
+    new_df.to_csv("eta_datahunts/" + str(article_sha256) + "_" +
                   str(contributor_id) +
                   "_user_contributions.csv")
-
-
-# In[27]:
-
+    
+    return new_df
 
 """
 
@@ -208,8 +156,6 @@ def get_TopicQA(df, row_number):
 # want point value (col F), topic (category), subset (col G - label) 
 #  - extract this from weight_key csv (do string parsing - slice out the “Specialist” part)
 # into new data frame —> csv — different csv name from previous ones
-
-# In[28]:
 
 
 """
@@ -237,16 +183,12 @@ def new_from_row(df, row_number):
         new_df['Start'] = np.array(TQA_row['start_pos'])
         new_df['End'] = np.array(TQA_row['end_pos'])
         return new_df
-    
 
+first = raw_data['contributor_uuid'][0]
+first256 = raw_data['article_sha256'][0]
 
-# In[25]:
+output = create_eta_datahunt(raw_data, weight_key, first256, first)
 
-
-# create_eta_datahunt(raw_data, weight_key, 100059, "a")
-
-
-# In[ ]:
 
 
 
