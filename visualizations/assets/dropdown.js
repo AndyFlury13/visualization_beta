@@ -8,6 +8,8 @@ window.addEventListener("DOMContentLoaded", function () {
   var userIDs = ['1234', '5678', '9012']
   //HARD CODED
 
+
+  // Classic View
   button_one.onclick = function() {
     $("#chart").css("opacity", 1);
     document.querySelector('#userid').setAttribute('class', 'hidden');
@@ -25,6 +27,8 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  //Your Contribution
   input.addEventListener("keyup", e => {
     if (e.keyCode === 13) {
       console.log(input.value);
@@ -59,12 +63,16 @@ window.addEventListener("DOMContentLoaded", function () {
       input.value = "";
     }
   });
+
+
   button_two.onclick = function() {
     document.querySelector('#userid').setAttribute('class', 'userform');
     this.style.opacity = 1;
     button_one.style.opacity = 0.6;
     button_three.style.opacity = 0.6;
   }
+
+  //Article Elements
   button_three.onclick = function() {
     $("#chart").css("opacity", .2);
     document.querySelector('#userid').setAttribute('class', 'hidden');
