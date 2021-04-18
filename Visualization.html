@@ -199,7 +199,7 @@
                           sunburst = $(".userScore");
                           sunburst.slideDown();
                           //sunburst.css("display", "block");
-                          sunburst.opacity = sunburst.opacity * 0.6
+                          
                           d3.text(TEXT_FILE_URL, function(text) {
                             document.getElementById("textArticle").innerHTML = text.toString();
                             d3.csv(USER_FILE_URL, function(error, data) {
