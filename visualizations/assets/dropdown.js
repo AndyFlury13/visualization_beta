@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
   var yourCont = document.getElementsByClassName('hide')[1];
 
   button_one.onclick = function() {
+    $("#popup").css("opacity", 1);
     classic = true;
     content.style.display = "none";
     articleElements.setAttribute('class', 'hide');
@@ -48,10 +49,12 @@ window.addEventListener("DOMContentLoaded", function () {
       if (!userIDs.includes(userid)) {
         console.log("Invalid USERID");
         document.querySelector('#errormsg').setAttribute('class', 'shown');
-        $("#chart").css("opacity", .2);
       } else {
         classic = false;
         visualizationOn = false;
+        $("#chart").css("opacity", .2);
+        $("#popup").css("opacity", .5);
+        $("myModal").hide();
         document.querySelector('#errormsg').setAttribute('class', 'hidden');
         // Implement USERID lookup here.
         sunburst = $(".userScore");
@@ -87,6 +90,8 @@ window.addEventListener("DOMContentLoaded", function () {
     classic = false;
     visualizationOn = false;
     $("#chart").css("opacity", .2);
+    $("#popup").css("opacity", .5);
+    $("myModal").hide();
     content.style.display = "block";
     articleElements.setAttribute('class', 'show');
     yourCont.setAttribute('class', 'hide');
