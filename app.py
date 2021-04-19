@@ -10,9 +10,8 @@ import pandas as pd
 import numpy as np
 
 sys.path.append("data/")
-
-import form_aggregate
-import datahunt_aggregate
+from form_aggregate import *
+#import datahunt_aggregate
 
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -26,21 +25,21 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 @cross_origin()
 def login():
-   message = None
-   print(request.args)
-   if request.method == 'POST':
-        if len(request.form) > 0:
+    message = None
+    if request.method == 'POST':
+        if 'article_sha256' in request.form:
             print(request.form)
             article_sha256 = request.form['article_sha256']
             user_id = request.form['user_id']
             if request.form['form'] == 'true':
                 ## Form_aggregate.py call here
-                print(article_sha256)
-                result='df here'
-
+                data_from_path = read_csv_from_path('data/')
+                simple_data_from_raw_data(data_from_path, article_sha256)
+                print("success?")
+                result = "success"
             else:
                 ## Datahunt_aggregate.py call here
-                result='df here'
+                result='success'
         else:
             result='null call'
         resp = make_response(result)
