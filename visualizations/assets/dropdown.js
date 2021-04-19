@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
   var yourCont = document.getElementsByClassName('hide')[1];
 
   button_one.onclick = function() {
+    classic = true;
     content.style.display = "none";
     articleElements.setAttribute('class', 'hide');
     yourCont.setAttribute('class', 'hide');
@@ -49,6 +50,8 @@ window.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#errormsg').setAttribute('class', 'shown');
         $("#chart").css("opacity", .2);
       } else {
+        classic = false;
+        visualizationOn = false;
         document.querySelector('#errormsg').setAttribute('class', 'hidden');
         // Implement USERID lookup here.
         sunburst = $(".userScore");
@@ -81,6 +84,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
   //Article Elements
   button_three.onclick = function() {
+    classic = false;
+    visualizationOn = false;
     $("#chart").css("opacity", .2);
     content.style.display = "block";
     articleElements.setAttribute('class', 'show');
