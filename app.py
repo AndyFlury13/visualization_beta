@@ -1,6 +1,19 @@
 from flask import Flask, render_template, redirect, url_for,request
 from flask_cors import CORS, cross_origin
 from flask import make_response
+
+import csv
+import os
+import glob
+import sys
+import pandas as pd
+import numpy as np
+
+sys.path.append("data/")
+
+import form_aggregate
+import datahunt_aggregate
+
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -21,10 +34,12 @@ def login():
             article_sha256 = request.form['article_sha256']
             user_id = request.form['user_id']
             if request.form['form'] == 'true':
-                ## Datahunt_aggregate.py call here
-                result='df here'
-            else:
                 ## Form_aggregate.py call here
+                print(article_sha256)
+                result='df here'
+
+            else:
+                ## Datahunt_aggregate.py call here
                 result='df here'
         else:
             result='null call'

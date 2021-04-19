@@ -7,8 +7,10 @@ window.addEventListener("DOMContentLoaded", function () {
   // HARD CODED
   var userIDs = ['1234', '5678', '9012']
   //HARD CODED
+
   var articleElements = document.getElementsByClassName('hide')[0];
   var yourCont = document.getElementsByClassName('hide')[1];
+
   button_one.onclick = function() {
     content.style.display = "none";
     articleElements.setAttribute('class', 'hide');
@@ -29,6 +31,8 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  //Your Contribution
   input.addEventListener("keyup", e => {
     if (e.keyCode === 13) {
       console.log(input.value);
@@ -63,6 +67,8 @@ window.addEventListener("DOMContentLoaded", function () {
       input.value = "";
     }
   });
+
+
   button_two.onclick = function() {
     document.querySelector('#userid').setAttribute('class', 'userform');
     content.style.display = "block";
@@ -72,6 +78,8 @@ window.addEventListener("DOMContentLoaded", function () {
     button_one.style.opacity = 0.6;
     button_three.style.opacity = 0.6;
   }
+
+  //Article Elements
   button_three.onclick = function() {
     $("#chart").css("opacity", .2);
     content.style.display = "block";
