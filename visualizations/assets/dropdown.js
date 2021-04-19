@@ -3,12 +3,16 @@ window.addEventListener("DOMContentLoaded", function () {
   var button_two = document.getElementById("button_two");
   var button_three = document.getElementById("button_three");
   var input = document.getElementById('userid')
-
+  var content = document.getElementsByClassName("dropdown-content")[0];
   // HARD CODED
   var userIDs = ['1234', '5678', '9012']
   //HARD CODED
-
+  var articleElements = document.getElementsByClassName('hide')[0];
+  var yourCont = document.getElementsByClassName('hide')[1];
   button_one.onclick = function() {
+    content.style.display = "none";
+    articleElements.setAttribute('class', 'hide');
+    yourCont.setAttribute('class', 'hide');
     $("#chart").css("opacity", 1);
     document.querySelector('#userid').setAttribute('class', 'hidden');
     document.querySelector('#errormsg').setAttribute('class', 'hidden');
@@ -61,12 +65,18 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   button_two.onclick = function() {
     document.querySelector('#userid').setAttribute('class', 'userform');
+    content.style.display = "block";
+    yourCont.setAttribute('class', 'show');
+    articleElements.setAttribute('class', 'hide');
     this.style.opacity = 1;
     button_one.style.opacity = 0.6;
     button_three.style.opacity = 0.6;
   }
   button_three.onclick = function() {
     $("#chart").css("opacity", .2);
+    content.style.display = "block";
+    articleElements.setAttribute('class', 'show');
+    yourCont.setAttribute('class', 'hide');
     document.querySelector('#userid').setAttribute('class', 'hidden');
     document.querySelector('#errormsg').setAttribute('class', 'hidden');
     sunburst = $(".userScore");
