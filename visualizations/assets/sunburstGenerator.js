@@ -31,7 +31,7 @@ var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 var partition = d3.partition();
 
-
+var classic = true;
 
 /* A map that relates a node in the data heirarchy to the
 SVGPathElement in the visualization.
@@ -51,6 +51,7 @@ var PSEUDOBOX;
 
 var ROOT;
 var SVG;
+var visualizationOn;
 
 function hallmark(dataFileName) {
 
@@ -63,7 +64,7 @@ function hallmark(dataFileName) {
   SVG = svg;
 
 
-  var visualizationOn = false;
+  visualizationOn = false;
 
   var div = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -139,8 +140,8 @@ function hallmark(dataFileName) {
   //Mouse animations.
     svg.selectAll("path")
        .on('mouseover', function(d) {
-          drawVis(d, root, this, div);
-          visualizationOn = true;
+            drawVis(d, root, this, div);
+            visualizationOn = true;
       })
       .on('mousemove', function(d) {
           if (visualizationOn) {
@@ -176,62 +177,76 @@ function hallmark(dataFileName) {
       .style("fill", colorFinderSun);
 
 
-//Setting the outer and inside rings to be transparent.
-d3.selectAll("path").transition().each(function(d) {
-    if (d) {
-        if (!d.children) {
-            this.style.display = "none";
-        } else if (d.height == 2) {
-            this.style.opacity = 0;
-        }
-    } else {
-        //console.log("error catching");
-    }
-});
+  //Setting the outer and inside rings to be transparent.
+  d3.selectAll("path").transition().each(function(d) {
+      if (d) {
+          if (!d.children) {
+              this.style.display = "none";
+          } else if (d.height == 2) {
+              this.style.opacity = 0;
+          }
+      } else {
+          //console.log("error catching");
+      }
+  });
 
-//Mouse animations.
-svg.selectAll("path")
-    .on('mouseover', function(d) {
-        if (d.height == 1) {
-        }
-        drawVis(d, root, this, div);
-        visualizationOn = true;
-    })
-    .on('mousemove', function(d) {
-        if (visualizationOn) {
-            var sunburstBox = $(".sunburst")[0].getBoundingClientRect()
-            var divBox = $(".tooltip")[0].getBoundingClientRect()
-            var midline = (sunburstBox.right + sunburstBox.left) / 2;
-            var width = divBox.right - divBox.left;
-            if (d3.event.pageX < midline) {
-                div
-                    .style("opacity", .7)
-                    .style("left", (d3.event.pageX)+ "px")
-                    .style("top", (d3.event.pageY) + "px")
+  //Mouse animations.
+  svg.selectAll("path")
+      .on('mouseover', function(d) {
+          if (d.height == 0) {
+            console.log(d.data.data)
+            var start_index = d.data.data.Start;
+            var end_index = d.data.data.End;
+            if (start_index == -1 || end_index == -1) {
+              document.body.style.cursor = "default";
             } else {
-                div
-                    .style("opacity", .7)
-                    .style("left", (d3.event.pageX - width)+ "px")
-                    .style("top", (d3.event.pageY) + "px")
+              document.body.style.cursor = "pointer";
             }
-        } else {
-            div.transition()
-                .duration(10)
-                .style("opacity", 0);
-        }
-    })
-    .on('mouseleave', function(d) {
-        resetVis(d);
-    }).on('click', function(d) {
-      scrolltoView(d)
-    })
-    .on('click', function(d) {
-        scrolltoView(d);
-    })
-    .style("fill", colorFinderSun);
+          } else {
+            document.body.style.cursor = "default";
+          }
+          if (classic) {
+            drawVis(d, root, this, div);
+            visualizationOn = true;
+          }
+      })
+      .on('mousemove', function(d) {
+        console.log(visualizationOn);
+          if (visualizationOn) {
+              var sunburstBox = $(".sunburst")[0].getBoundingClientRect()
+              var divBox = $(".tooltip")[0].getBoundingClientRect()
+              var midline = (sunburstBox.right + sunburstBox.left) / 2;
+              var width = divBox.right - divBox.left;
+              if (d3.event.pageX < midline) {
+                  div
+                      .style("opacity", .7)
+                      .style("left", (d3.event.pageX)+ "px")
+                      .style("top", (d3.event.pageY) + "px")
+              } else {
+                  div
+                      .style("opacity", .7)
+                      .style("left", (d3.event.pageX - width)+ "px")
+                      .style("top", (d3.event.pageY) + "px")
+              }
+          } else {
+              div.transition()
+                  .duration(10)
+                  .style("opacity", 0);
+          }
+      })
+      .on('mouseleave', function(d) {
+          resetVis(d);
+          document.body.style.cursor = "default";
+      }).on('click', function(d) {
+        scrolltoView(d)
+      })
+      .on('click', function(d) {
+          scrolltoView(d);
+      })
+      .style("fill", colorFinderSun);
 
-});
-d3.select(self.frameElement).style("height", height + "px");
+  });
+  d3.select(self.frameElement).style("height", height + "px");
 
 }
 
@@ -397,9 +412,15 @@ function drawVis(d, root, me, div) {
     var words_len = tooltip_text.length;
     var start_index = d.data.data.Start;
     var end_index = d.data.data.End;
+    var category = d.data.data["Credibility Indicator Category"]
     if (start_index == -1 || end_index == -1) {
-      tooltip_text = tooltip_text + "<br><span style='color:#bd1313'>(No highlight in text)</span></span>";
-      words_len += "(No highlight in text)".length;
+      if (category == "Holistic") {
+        tooltip_text = tooltip_text + "<br><i>(Throughout article)</i></span>";
+        words_len += "(Throughout article)".length;
+      } else {
+        tooltip_text = tooltip_text + "<br><i>(No highlight in text)</i></span>";
+        words_len += "(No highlight in text)".length;
+      }
     }else {
       tooltip_text += "</span>"
     }
