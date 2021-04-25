@@ -29,21 +29,25 @@ from collections import Counter
 
 # Read in all the datahunt files from the datahunt folder.
 
-path =  'datahunts'
-all_files = glob.glob(path + "/*.csv")
+def file_concat(path = ''):
 
-li = []
+	path +=  'datahunts'
+	all_files = glob.glob(path + "/*.csv")
 
-for filename in all_files:
-    df = pd.read_csv(filename, index_col=None, header=0)
-    li.append(df)
+	li = []
 
-raw_data = pd.concat(li, axis=0, ignore_index=True)
+	for filename in all_files:
+    	df = pd.read_csv(filename, index_col=None, header=0)
+    	li.append(df)
+
+	raw_data = pd.concat(li, axis=0, ignore_index=True)
 
 
-if not (raw_data[(raw_data["start_pos"] == -1) & (raw_data["end_pos"] == -1)].head()).empty:
-    print('Warning: there are rows in this file that have invalid start and end indices.'+
-          'This means their data may correspond to invalid sections of the article.')
+	if not (raw_data[(raw_data["start_pos"] == -1) & (raw_data["end_pos"] == -1)].head()).empty:
+    	print('Warning: there are rows in this file that have invalid start and end indices.'+
+        	  'This means their data may correspond to invalid sections of the article.')
+
+    return raw_data
 
 # ## Branch 1
 
@@ -98,8 +102,10 @@ def convert_to_csv_user_article(df, user_id, article_id):
 # ## Branch 2
 # ### Points based on Topic Name, Question Number, Answer Number
 
-
-weight_key = pd.read_csv('weight_key.csv')
+def create_weight_key(path = ''):
+	path += 'weight_key.csv'
+	weight_key = pd.read_csv(path)
+	return weight_key
 
 """
 create_eta_datahunt will create Explore The Article datahunt csvs containing the 
@@ -111,7 +117,7 @@ predicted individual contribution for each question asked by Tagworks.
     @return: None. Writes a dataframe of the proper format to be fed into Visualization.html. Contains the predicted point values and labels for the individual contributions to Tagworks. This csv file is in eta_datahunts.
 
 """
-def create_eta_datahunt(raw_data, weight_key, article_sha256, contributor_id):
+def create_eta_datahunt(raw_data, weight_key, article_sha256, contributor_id, path = ''):
     raw_data = raw_data.loc[raw_data["article_sha256"] == article_sha256]
     if raw_data.empty:
         new_df = pd.DataFrame([["no_article", 0, 0, 0, 0, 0, 0]], columns=['Credibility Indicator Category', 'Question Number', 'Answer Number','Point Recommendation', 'Credibility Indicator Name', 'Start', 'End'])
@@ -127,7 +133,7 @@ def create_eta_datahunt(raw_data, weight_key, article_sha256, contributor_id):
                     continue
                 else:
                     new_df = new_df.append(new_row)
-    new_df.to_csv("eta_datahunts/" + str(article_sha256) + "_" +
+    new_df.to_csv(path + "eta_datahunts/" + str(article_sha256) + "_" +
                   str(contributor_id) +
                   "_user_contributions.csv")
     
