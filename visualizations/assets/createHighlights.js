@@ -32,6 +32,9 @@ function scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl) {
           document.getElementById("textArticle").innerHTML = text.toString();
           d3.csv(dataFileUrl, function(error, data) {
             if (error) throw error;
+
+            moveFactCheckLabels(formFileUrl, data);
+
             createHighlights(data, text.toString());
 
         });
@@ -41,6 +44,41 @@ function scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl) {
       });
 
 
+}
+
+
+// Mutates data
+
+
+function moveFactCheckLabels(formFileUrl, visDataArray) {
+  d3.csv(formFileUrl, function(error, data) {
+    for (rowIndex in data) {
+      if (data[rowIndex]["Credibility Indicator Category"] == "Needs Fact-Check") {
+        // data[rowIndex]
+        var row = data[rowIndex];
+
+        delete row[""]
+        delete row["Case Number"]
+
+        row["Points"] = "0";
+        row["Credibility Indicator ID"] = "E0";
+        row["Credibility Indicator Name"] = data[rowIndex]["Credibility Indicator Category"];
+        row["Credibility Indicator Category"] = "Evidence";
+        row["target_text"] = " nan"
+
+        Object.defineProperty(row, 'Article ID',
+            Object.getOwnPropertyDescriptor(row, 'Article sha256'));
+        delete row['Article sha256'];
+
+
+
+        visDataArray.push(row)
+      }
+    }
+    console.log(visDataArray);
+    // console.log(data)
+
+  });
 }
 
 function sortFormEntries(json) {
