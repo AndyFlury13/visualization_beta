@@ -8,11 +8,6 @@ A rough roadmap of the contents:
 
 **/
 
-
-
-
-
-//var dataFileName = "VisualizationData_1712.csv";
 var chartDiv = document.getElementById("chart");
 
 var width = 400,
@@ -53,7 +48,7 @@ var ROOT;
 var SVG;
 var visualizationOn;
 
-function hallmark(dataFileName) {
+function hallmark(data) {
 
 
   var svg = d3.select("#chart").append("svg")
@@ -80,8 +75,8 @@ function hallmark(dataFileName) {
 
   PSEUDOBOX = pseudobox;
   //This code block takes the csv and creates the visualization.
-  d3.csv(dataFileName, function(error, data) {
-    if (error) throw error;
+  // d3.csv(dataFileName, function(error, data) {
+    // if (error) throw error;
     delete data["columns"];
     data = addDummyData(data);
     var root = convertToHierarchy(data);
@@ -245,7 +240,7 @@ function hallmark(dataFileName) {
       })
       .style("fill", colorFinderSun);
 
-  });
+  // });
   d3.select(self.frameElement).style("height", height + "px");
 
 }

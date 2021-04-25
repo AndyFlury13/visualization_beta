@@ -37,6 +37,7 @@ function scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl) {
 
             createHighlights(data, text.toString());
 
+            hallmark(data);
         });
           FORM_FILE_URL = formFileUrl;
           USER_FILE_URL = userFileUrl;
