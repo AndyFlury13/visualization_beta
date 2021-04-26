@@ -160,7 +160,11 @@ function openHighlight(textArray, index, entry, highlightStack, i) {
   let uniqueId = entry[0].toString();
   let color = entry[1];
   let name = " name='" + uniqueId + "'";
-  let style = " style= 'border-bottom:1px solid " + color + "'";
+  
+  let style = " style= 'border-bottom:1px solid " + color;
+  color['opacity'] = 0.1;
+  style = style + "; --color: " + color + "'";
+    // x.toElement.style.setProperty("--color", "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + "0.4);");
   let highlight = "<span class='highlight' start='"+index+"'" + name + allIDsBelow + style + ">";
   textArray[index-1] = text + highlight;
   return textArray;
@@ -248,7 +252,6 @@ function highlight(x) {
   highlightManyHallmark(allIds, ROOT);
   x.toElement.style.setProperty("background-color", "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + "0.4");
   x.toElement.style.setProperty("background-clip", "content-box");
-
 
 }
 

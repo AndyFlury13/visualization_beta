@@ -2133,10 +2133,24 @@ main {
     }
 
 }
-span.highlight { border-bottom:1px solid; }
+span.highlight { 
+  border-bottom:1px solid;
+  animation: pulse-animation 2s;
+}
 
 span.highlight span.highlight { padding-bottom:2px; }
 
 span.highlight span.highlight span.highlight { padding-bottom:4px; }
 
 span.highlight span.highlight span.highlight span.highlight { padding-bottom:6px; }
+
+
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px var(--color);
+  }
+  100% {
+    box-shadow: 0 0 0 5px var(--color);
+  }
+}
