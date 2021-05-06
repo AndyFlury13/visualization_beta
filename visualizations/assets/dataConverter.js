@@ -30,7 +30,6 @@ function addDummyData(data) {
 //Convert data to a hierarchical format.
 function convertToHierarchy(data) {
   //Stratify converts flat data to hierarchal data.
-
   var stratify = d3.stratify()
     .id(d => d["Credibility Indicator Name"])
     .parentId(d => d["Credibility Indicator Category"])

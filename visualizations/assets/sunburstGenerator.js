@@ -50,7 +50,6 @@ var visualizationOn;
 
 function hallmark(data) {
 
-
   var svg = d3.select("#chart").append("svg")
       .attr("width", width)
       .attr("height", height)
@@ -80,6 +79,7 @@ function hallmark(data) {
     delete data["columns"];
     data = addDummyData(data);
     var root = convertToHierarchy(data);
+    console.log(root);
     var PILLS_MAP = new Map();
     condense(root, PILLS_MAP);
     drawPills(PILLS_MAP);
@@ -189,7 +189,6 @@ function hallmark(data) {
   svg.selectAll("path")
       .on('mouseover', function(d) {
           if (d.height == 0) {
-            console.log(d.data.data)
             var start_index = d.data.data.Start;
             var end_index = d.data.data.End;
             if (start_index == -1 || end_index == -1) {
@@ -233,11 +232,13 @@ function hallmark(data) {
           resetVis(d);
           document.body.style.cursor = "default";
       }).on('click', function(d) {
-        scrolltoView(d)
+        scrolltoView(d);
+        pulse(d);
       })
-      .on('click', function(d) {
-          scrolltoView(d);
-      })
+      .on('click', function(d) { //Redundant??????
+          scrolltoView(d); //Redundant??????
+          pulse(d);
+      }) //Redundant??????
       .style("fill", colorFinderSun);
 
   // });
@@ -438,6 +439,11 @@ function drawVis(d, root, me, div) {
 
     var pointsGained = scoreSum(d);
     SVG.selectAll(".center-text").style('display', 'none');
+
+    console.log(d.data.data["Credibility Indicator Name"]);
+    if (d.data.data["Credibility Indicator Name"] == "Waiting for fact-checkers") {
+      pointsGained = "";
+    }
     SVG.append("text")
       .attr("class", "center-text")
       .attr("x", 0)
@@ -480,6 +486,17 @@ function scrolltoView(x) {
         let textToView = document.getElementsByName(x.data.data["Credibility Indicator ID"] + '-' + x.data.data["Credibility Indicator Name"] + '-' + x.data.data.Start + '-' + x.data.data.End);
         textToView[0].scrollIntoView({behavior: "smooth", block:"center"});
     }
+}
+
+function pulse(x) {
+  x = x.data.data;
+  //console.log(x);
+
+  var name = x["Credibility Indicator ID"] +"-"+ x["Credibility Indicator Name"] + '-'+ x["Start"] +"-"+ x["End"]
+  //console.log(name);
+  var value = $("[name='" + name+"']");
+  console.log(value);
+  value.animate("margin:100px");
 }
 
 

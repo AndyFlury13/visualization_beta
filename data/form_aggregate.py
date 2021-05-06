@@ -51,7 +51,7 @@ def simple_data_from_raw_data(article_sha256, target_dir='../'):
 
     else:
         sub_simple_data = simple_data[simple_data['Article sha256'] == article_sha256].copy()
-        sub_simple_data['Indices of Label in Article'] = sub_simple_data.apply(lambda x: list(range(x['Start'], x['End'] + 1)), axis=1)
+        sub_simple_data['Indices of Label in Article'] = sub_simple_data.apply(lambda x: list(range(int(x['Start']), int(x['End'] + 1))), axis=1)
         sub_simple_data.to_csv(file_name)
         return sub_simple_data
 

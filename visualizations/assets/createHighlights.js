@@ -7,9 +7,9 @@ function sortJSONentries(json) {
   var sortArray = []; // an array of arrays
   for (i = 0; i < json.length; i++) {
       if (parseInt(json[i].Start) == -1 || parseInt(json[i].End) == -1 || json[i].Start == "") {
-        continue; // ignore entries where indices are -1 or null
+        //console.log(json[i]);
+        continue; // ignore entries where indices are -1 or null]
       }
-
     // [uniqueID, color, index, boolean]
 
     let uniqueID = json[i]["Credibility Indicator ID"] +'-' + json[i]["Credibility Indicator Name"] + "-" + json[i].Start + "-" + json[i].End;
@@ -30,14 +30,18 @@ function scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl) {
       DATA_FILE_URL = dataFileUrl;
       d3.text(textFileUrl, function(text) {
           document.getElementById("textArticle").innerHTML = text.toString();
+
           d3.csv(dataFileUrl, function(error, data) {
             if (error) throw error;
+            d3.csv(formFileUrl, function(error, form_data) {
+              if (error) throw error;
+              delete data['columns'];
+              moveFactCheckLabels(form_data, data);
+              createHighlights(data, text.toString());
+              data.splice(data.length-2, 1);
+              hallmark(data);
+            });
 
-            moveFactCheckLabels(formFileUrl, data);
-
-            createHighlights(data, text.toString());
-
-            hallmark(data);
         });
           FORM_FILE_URL = formFileUrl;
           USER_FILE_URL = userFileUrl;
@@ -51,35 +55,29 @@ function scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl) {
 // Mutates data
 
 
-function moveFactCheckLabels(formFileUrl, visDataArray) {
-  d3.csv(formFileUrl, function(error, data) {
-    for (rowIndex in data) {
-      if (data[rowIndex]["Credibility Indicator Category"] == "Needs Fact-Check") {
+function moveFactCheckLabels(form_data, visDataArray) {
+
+    for (rowIndex in form_data) {
+      if (form_data[rowIndex]["Credibility Indicator Category"] == "Needs Fact-Check") {
         // data[rowIndex]
-        var row = data[rowIndex];
+        var row = Object.assign({}, form_data[rowIndex]);
 
         delete row[""]
         delete row["Case Number"]
 
-        row["Points"] = "0";
-        row["Credibility Indicator ID"] = "E0";
-        row["Credibility Indicator Name"] = data[rowIndex]["Credibility Indicator Category"];
+        row["Points"] = ".5";
+        row["Credibility Indicator ID"] = "E26";
+        row["Credibility Indicator Name"] = "Waiting for fact-checkers";
         row["Credibility Indicator Category"] = "Evidence";
-        row["target_text"] = " nan"
-
+        row["target_text"] = "nan";
         Object.defineProperty(row, 'Article ID',
             Object.getOwnPropertyDescriptor(row, 'Article sha256'));
         delete row['Article sha256'];
-
-
-
-        visDataArray.push(row)
+        //console.log(row);
+        visDataArray.push(row);
+        //console.log(visDataArray[visDataArray.length-1]);
       }
     }
-    console.log(visDataArray);
-    // console.log(data)
-
-  });
 }
 
 function sortFormEntries(json) {
@@ -166,7 +164,6 @@ function createFormHighlights(json, textString, form) {
 function createHighlights(json, textString) {
   //var textString = document.getElementById('textArticle').innerHTML;
   textArray = textString.split("");  // Splitting the string into an array of strings, one item per character
-
   var sortedEntries = sortJSONentries(json); // an array highlight arrays, sorted by their indices
   var highlightStack = new FlexArray();
 
@@ -199,7 +196,7 @@ function openHighlight(textArray, index, entry, highlightStack, i) {
   let uniqueId = entry[0].toString();
   let color = entry[1];
   let name = " name='" + uniqueId + "'";
-  
+
   let style = " style= 'border-bottom:1px solid " + color;
   color['opacity'] = 0.1;
   style = style + "; --color: " + color + "'";
@@ -377,6 +374,7 @@ function highlightManyHallmark(idArray, d) {
         if (id != "") {
             var category;
             for (category of d.children) {
+
                 var categoryName = category.data.data['Credibility Indicator Name'];
                 var catPath = nodeToPath.get(category);
                 d3.select(catPath)
@@ -395,8 +393,14 @@ function highlightManyHallmark(idArray, d) {
                         .style("opacity", .5);
                         var nameFromElement = id.substring(3);
                         nameFromElement = nameFromElement.replace(/[0-9]|[-]/g, '');
-
+                        console.log(nameFromElement);
+                        if (nameFromElement == "Waiting for factcheckers") {
+                          nameFromElement = "Waiting for fact-checkers";
+                        }
+                        //console.log(indicatorName);
+                        //console.log(nameFromElement);
                         if (indicatorName == nameFromElement) {
+                            console.log('test');
                             pathList = pathList.concat(path);
                             var score = scoreSum(indicator);
                             pointsGained += score;
@@ -404,7 +408,6 @@ function highlightManyHallmark(idArray, d) {
                                 indicators += indicatorName + ", ";
                             }
                         }
-
                     }
                 }
             }
@@ -444,6 +447,15 @@ function highlightManyHallmark(idArray, d) {
 
 
     SVG.selectAll(".center-text").style('display', 'none');
+    if (indicators == "Waiting for fact-checkers") {
+      SVG.append("text")
+      .attr("class", "center-text")
+      .attr("x", 0)
+      .attr("y", 13)
+      .style("font-size", 40)
+      .style("text-anchor", "middle")
+      .html((""));
+    } else {
     SVG.append("text")
     .attr("class", "center-text")
     .attr("x", 0)
@@ -451,7 +463,7 @@ function highlightManyHallmark(idArray, d) {
     .style("font-size", 40)
     .style("text-anchor", "middle")
     .html((pointsGained));
-
+}
 
 }
 
