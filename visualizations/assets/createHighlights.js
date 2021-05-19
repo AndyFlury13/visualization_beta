@@ -34,12 +34,17 @@ function scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl) {
           d3.csv(dataFileUrl, function(error, data) {
             if (error) throw error;
             d3.csv(formFileUrl, function(error, form_data) {
-              if (error) throw error;
-              delete data['columns'];
-              moveFactCheckLabels(form_data, data);
-              createHighlights(data, text.toString());
-              data.splice(data.length-2, 1);
-              hallmark(data);
+              if (error) {
+                console.log("No form file found");
+                createHighlights(data, text.toString());
+                hallmark(data)
+              } else {
+                delete data['columns'];
+                moveFactCheckLabels(form_data, data);
+                createHighlights(data, text.toString());
+                data.splice(data.length-2, 1);
+                hallmark(data);
+              }
             });
 
         });
@@ -200,7 +205,6 @@ function openHighlight(textArray, index, entry, highlightStack, i) {
   let style = " style= 'border-bottom:1px solid " + color;
   color['opacity'] = 0.1;
   style = style + "; --color: " + color + "'";
-    // x.toElement.style.setProperty("--color", "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + "0.4);");
   let highlight = "<span class='highlight' start='"+index+"'" + name + allIDsBelow + style + ">";
   textArray[index-1] = text + highlight;
   return textArray;

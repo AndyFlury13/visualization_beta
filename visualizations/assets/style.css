@@ -2133,9 +2133,9 @@ main {
     }
 
 }
-span.highlight { 
+span.highlight {
   border-bottom:1px solid;
-  animation: pulse-animation 2s;
+  
 }
 
 span.highlight span.highlight { padding-bottom:2px; }

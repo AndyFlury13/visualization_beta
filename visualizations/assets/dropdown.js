@@ -65,8 +65,11 @@ window.addEventListener("DOMContentLoaded", function () {
         d3.text(TEXT_FILE_URL, function(text) {
           document.getElementById("textArticle").innerHTML = text.toString();
           d3.csv(USER_FILE_URL, function(error, data) {
-            if (error) throw error;
+            if (error) {
+              console.log('No user file found');
+            } else {
               createFormHighlights(data, text.toString(), false);
+            }
             });
         });
       }
@@ -120,5 +123,5 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-  
+
 });
