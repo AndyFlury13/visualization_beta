@@ -395,6 +395,7 @@ function drawVis(d, root, me, div) {
             .style("opacity", 1)
     } if (d.height == 0) {
         let textToHighlight = document.getElementsByName(d.data.data["Credibility Indicator ID"] +"-" + d.data.data["Credibility Indicator Name"] + "-" + d.data.data.Start + "-" + d.data.data.End);
+
         if (d.data.data.Start == -1) {
           console.log("This fallacy does not have a highlight in the article body.");
         } else {
@@ -424,7 +425,7 @@ function drawVis(d, root, me, div) {
         tooltip_text = tooltip_text + "<br><i>(No highlight in text)</i></span>";
         words_len += "(No highlight in text)".length;
       }
-    }else {
+    } else {
       tooltip_text += "</span>"
     }
     div.transition()
@@ -501,7 +502,6 @@ function pulse(x) {
   var name = x["Credibility Indicator ID"] +"-"+ x["Credibility Indicator Name"] + '-'+ x["Start"] +"-"+ x["End"]
   //console.log(name);
   var value = $("[name='" + name+"']");
-  console.log(value);
   value.animate("margin:100px");
 }
 
