@@ -23,7 +23,7 @@
     <script type="text/javascript" src="/visualizations/assets/colorFinder.js"></script>
     <script type="text/javascript" src="/visualizations/assets/dataConverter.js"></script>
     <script type="text/javascript" src = "/visualizations/assets/embedder.js"></script>
-    <script type="text/javascript" src="/visualizations/assets/switchVis.js"></script>
+    <!-- <script type="text/javascript" src="/visualizations/assets/switchVis.js"></script> -->
     <script type="text/javascript" src ="/visualizations/assets/eta.js"></script>
     <script type="text/javascript" src="/visualizations/assets/dropdown.js"></script>
 
@@ -185,10 +185,12 @@
                 <script type="text/javascript">
                   var textFileUrl = "$ARTICLE_TEXT_URL";
                   var dataFileUrl = "$DATA_CSV_URL";
+                  var triageFileUrl = "$TRIAGER_CSV_URL";
+
                   
-                  formFileUrl = "form.csv";
+
                   var userFileUrl = "user_contributions.csv";
-                  import("/visualizations/assets/createHighlights.js").then(scoreArticle(textFileUrl, dataFileUrl, formFileUrl, userFileUrl));
+                  import("/visualizations/assets/createHighlights.js").then(scoreArticle(textFileUrl, dataFileUrl, triageFileUrl, userFileUrl));
                 </script>
                 <div class="sunburst">
                   <button id="popup">
@@ -218,10 +220,12 @@
                     btn.onclick = function() {
                       if (modal.style.display === "block") {
                         modal.style.display = "none";
-                        $("#popup").html("?");
+                        jQuery("#popup").html("?");
+                        jQuery("#popup").css("bottom", "488px");
                       } else {
                         modal.style.display = "block";
-                        $("#popup").html("X");
+                        jQuery("#popup").html("X");
+                        jQuery("#popup").css("bottom", "452px");
                       }
                     }
 

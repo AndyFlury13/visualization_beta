@@ -10,21 +10,21 @@ function colorFinder(jsonLine) {
       return d3.rgb(43, 82, 230);
   } else if (jsonLine["Credibility Indicator Category"] == "Holistic"){
       return d3.rgb(255, 180, 0);
-  } else if (jsonLine["Credibility Indicator Category"] == "Source") {
+  } else if (jsonLine["Credibility Indicator Category"] == "Sourcing") {
       return d3.rgb(201, 87, 198)
   } else {
     return d3.rgb(255, 255, 255);
   }
 }
 
-function colorFinderForm(jsonLine) {
-    if (jsonLine["Credibility Indicator Category"] === "Arguments") {
+function colorFinderTriage(jsonLine) {
+    if (jsonLine["topic_name"] === "Arguments") {
     return d3.rgb(239, 92, 84);
-  } else if (jsonLine["Credibility Indicator Category"] === "Quoted Sources") {
+  } else if (jsonLine["topic_name"] === "Quoted Sources") {
     return d3.rgb(0, 165, 150);
-  } else if (jsonLine["Credibility Indicator Category"] === "Assertions") {
+  } else if (jsonLine["topic_name"] === "Assertions") {
       return d3.rgb(0, 191, 255);
-  } else if (jsonLine["Credibility Indicator Category"] == "Needs Fact-Check") {
+  } else if (jsonLine["topic_name"] == "Needs Fact-Check") {
       return d3.rgb(43, 82, 230);
   }
 }
@@ -60,7 +60,7 @@ function colorFinderCategory(category) {
       return d3.rgb(43, 82, 230);
   } else if (category == "Holistic"){
       return d3.rgb(255, 180, 0);
-  } else if (category == "Source") {
+  } else if (category == "Sourcing") {
     return d3.rgb(201, 87, 198)
   } else {
     return d3.rgb(255, 255, 255);
