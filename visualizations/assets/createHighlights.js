@@ -250,20 +250,19 @@ function createTriageHighlights(json, textString, triage) {
   finalHTML = textArray.join('');
   document.getElementById('textArticle').innerHTML = finalHTML;
   $(".highlight").hover(triageHighlight, triageNormal);
-  $(".highlight").on("click", triageClick);
 }
 
 
-function triageClick() {
-  alert('help');
+function definitionClick() {
   if (!DEFINITION_SHOWING) {
    DEFINITION_SHOWING = true;
     var textWithDefinition = addDefinition(TOOLTIP_TEXT);
-    drawTooltipDiv(div, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20));
+    const sunburstPosition = $(".sunburst").offset();
+    drawTooltipDiv(DIV, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20), sunburstPosition.left, sunburstPosition.top);
   } else {
     DEFINITION_SHOWING = false;
     document.body.style.cursor = "default";
-    resetVis(ROOT);
+    
   }
 }
 
@@ -294,6 +293,7 @@ function createHighlights(visData, triageData, textString) {
   finalHTML = textArray.join('');
   document.getElementById('textArticle').innerHTML = finalHTML;
   $(".highlight").hover(highlight, normal);
+  $(".highlight").on("click", definitionClick);
 }
 
 function openHighlight(textArray, index, entry, highlightStack, i, classic) {
@@ -482,8 +482,8 @@ function normal(x) {
     PSEUDOBOX.transition()
         .delay(300)
         .duration(600)
-        .style("opacity", 0)
-
+        .style("opacity", 0);
+    DEFINITION_SHOWING = false;
 
   var allSpans = document.getElementsByTagName('span');
   for (var i = 0; i < allSpans.length; i++) {

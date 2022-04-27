@@ -93,13 +93,9 @@ function hallmark(data) {
   var PILLS_MAP = new Map();
   condense(root, PILLS_MAP);
   drawPills(PILLS_MAP);
-  // var sunburst_div = document.getElementsByClassName('sunburst')[0]
-  // var newheight = sunburst_div.clientHeight + document.getElementById('chart').clientHeight;
-  // sunburst_div.style.height = newheight.toString() + "px";
   ROOT = root;
   totalScore = 90 + scoreSum(root);
   root.sum(function(d) {
-
     return Math.abs(parseFloat(d.data.Points));
   });
 
@@ -116,14 +112,14 @@ function hallmark(data) {
 
 
   //Setting the center circle to the score
-var center_style = getCenterStyle(NUM_NFC);
-var text_x = center_style[0];
-var text_y = center_style[1];
-var text_size = center_style[2];
-var question_x = center_style[3];
-var question_y = center_style[4];
-var question_size = center_style[5]
-var double_question = center_style[6];
+  var center_style = getCenterStyle(NUM_NFC);
+  var text_x = center_style[0];
+  var text_y = center_style[1];
+  var text_size = center_style[2];
+  var question_x = center_style[3];
+  var question_y = center_style[4];
+  var question_size = center_style[5]
+  var double_question = center_style[6];
 
   svg.selectAll(".center-text")
     .style("display", "none");
@@ -165,58 +161,6 @@ var double_question = center_style[6];
   });
 
   //Mouse animations.
-  svg.selectAll("path")
-     .on('mouseover', function(d) {
-          drawVis(d, root, this, div);
-          visualizationOn = true;
-    })
-    .on('mousemove', function(d) {
-        if (visualizationOn) {
-            var sunburstBox = $(".sunburst")[0].getBoundingClientRect();
-            var divBox = $(".tooltip")[0].getBoundingClientRect();
-            var midline = (sunburstBox.right + sunburstBox.left) / 2;
-            var width = divBox.right - divBox.left;
-            if (d3.event.pageX < midline) {
-                div
-                    .style("opacity", .7)
-                    .style("left", (d3.event.pageX)+ "px")
-                    .style("top", (d3.event.pageY) + "px");
-            } else {
-                div
-                    .style("opacity", .7)
-                    .style("left", (d3.event.pageX - width)+ "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-        } else {
-            div.transition()
-                .duration(10)
-                .style("opacity", 0);
-        }
-    })
-    // .on('mouseleave', function(d) {
-    //   console.log('leaving');
-    //     resetVis(d);
-    // }).on('click', function(d) {
-    //   scrolltoView(d)
-    // })
-    // .on('click', function(d) {
-    //     scrolltoView(d);
-    // })
-    .style("fill", colorFinderSun);
-
-
-  //Setting the outer and inside rings to be transparent.
-    d3.selectAll("path").transition().each(function(d) {
-        if (d) {
-            if (!d.children) {
-                this.style.display = "none";
-            } else if (d.height == 2) {
-                this.style.opacity = 0;
-            }
-        }
-    });
-
-  //Mouse animations.
     svg.selectAll("path")
         .on('mouseover', function(d) {
             if (d.height == 0) {
@@ -238,6 +182,7 @@ var double_question = center_style[6];
             }
         })
         .on('mousemove', function(d) {
+            drawVis(d, root, this, div);
             if (visualizationOn) {
                 var sunburstBox = $(".sunburst")[0].getBoundingClientRect()
                 var divBox = $(".tooltip")[0].getBoundingClientRect()
@@ -254,7 +199,7 @@ var double_question = center_style[6];
                         .style("left", (d3.event.pageX - width)+ "px")
                         .style("top", (d3.event.pageY) + "px")
                 }
-                div.html()
+                // div.html()
             } else {
                 div.transition()
                     .duration(10)
@@ -264,14 +209,19 @@ var double_question = center_style[6];
         .on('mouseleave', function(d) {
             resetVis(d);
             DEFINITION_SHOWING = false;
+            clearTooltip(div);
             document.body.style.cursor = "default";
         })
         .on('click', function(d) {
-          DEFINITION_SHOWING = true;
-          scrolltoView(d);
-          var textWithDefinition = addDefinition(TOOLTIP_TEXT);
-            drawTooltipDiv(div, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20));
-          pulse(d);
+          if (!DEFINITION_SHOWING) {
+            DEFINITION_SHOWING = true;
+            scrolltoView(d);
+            const textWithDefinition = addDefinition(TOOLTIP_TEXT);
+            drawTooltipDiv(div, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20), d3.event.pageX, d3.event.pageY);
+          } else {
+            DEFINITION_SHOWING = false;
+            clearTooltip(div);
+          }
         })
         .style("fill", colorFinderSun);
 
@@ -487,33 +437,21 @@ function drawVis(d, root, me, div) {
     var category = d.data.data["Credibility Indicator Category"]
     if (start_index == -1 || end_index == -1) {
       if (category == "Holistic") {
-        TOOLTIP_TEXT = TOOLTIP_TEXT + "<br><i>(Throughout article)</i></span>";
+        TOOLTIP_TEXT = TOOLTIP_TEXT + "<br><i>(Throughout article)</i>";
         words_len += "(Throughout article)".length;
       } else {
-        TOOLTIP_TEXT = TOOLTIP_TEXT + "<br><i>(No highlight in text)</i></span>";
+        TOOLTIP_TEXT = TOOLTIP_TEXT + "<br><i>(No highlight in text)</i>";
         words_len += "(No highlight in text)".length;
       }
-    } else {
-      TOOLTIP_TEXT += "</span>";
     }
-
-    drawTooltipDiv(div, TOOLTIP_TEXT, words_len, max_width);
-    // div.transition()
-    //   .duration(200)
-    //   .style("opacity", .9);
-    // div.html("<span style='display: inline-block; vertical-align:middle; line-height:normal;'>" + tooltip_text)
-    //   .style("left", (d3.event.pageX) + "px")
-    //   .style("top", (d3.event.pageY) + "px")
-    //   .style("width", function() {
-    //     if (words_len < 20) {
-    //       return words_len.toString() + "ch";
-    //     }
-    //     return max_width.toString() + "ch";
-    //   }).style("min-height", function() {
-    //     return "1ch";
-    //   }).style("height", function() {
-    //     return "fit-content";
-    //   });
+    console.log("word length", words_len);
+    console.log("max_width: ", max_width);
+    if (DEFINITION_SHOWING) {
+      TOOLTIP_TEXT = addDefinition(TOOLTIP_TEXT);
+      words_len = TOOLTIP_TEXT.length;
+      max_width = Math.min(TOOLTIP_TEXT.length, 20);
+    }
+    drawTooltipDiv(div, TOOLTIP_TEXT, words_len, max_width, d3.event.pageX, d3.event.pageY);
 
     var pointsGained = scoreSum(d);
     SVG.selectAll(".center-text").style('display', 'none');
@@ -544,24 +482,27 @@ function drawVis(d, root, me, div) {
 }
 
 
-function drawTooltipDiv(div, text, words_len, max_width) {
+function drawTooltipDiv(div, text, words_len, max_width, x, y) {
   div.transition()
       .duration(200)
       .style("opacity", .9);
-    div.html("<span style='display: inline-block; vertical-align:middle; line-height:normal;'>" + text)
-      .style("left", (d3.event.pageX) + "px")
-      .style("top", (d3.event.pageY) + "px")
+    div.html("<span style='display: inline-block; vertical-align:middle; line-height:normal;'>" + text + "</span>")
+      .style("left", (x) + "px")
+      .style("top", (y) + "px")
       .style("width", function() {
         if (words_len < 20) {
           return words_len.toString() + "ch";
         }
-        console.log(max_width)
         return max_width.toString() + "ch";
       }).style("min-height", function() {
         return "1ch";
       }).style("height", function() {
         return "fit-content";
       });
+}
+
+function clearTooltip(div) {
+  div.transition().duration(200).style("opacity", 0);
 }
 
 /*
