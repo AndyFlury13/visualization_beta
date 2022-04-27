@@ -103,8 +103,8 @@ function scoreArticle(textFileUrl, dataFileUrl, triageFileUrl, userFileUrl) {
               } else {
                 
                 if (checkNullVisData(data) || checkNullTriageData(triage_data)) {
-                  hideExtraElem();
-                  console.log('hello');
+                  // hideExtraElem();
+                  console.log('Our data has some null elements');
                   //return;
                 }
                 document.getElementById("textArticle").innerHTML = text.toString();
