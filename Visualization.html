@@ -182,9 +182,9 @@
             <div class="cred-score-container">
 
                 <script type="text/javascript">
-                  var textFileUrl = "article_a06.txt";
-                  var dataFileUrl = "viz_data_a06.csv";
-                  var triageFileUrl = "triager_data_a06.csv";
+                  var textFileUrl = "$ARTICLE_TEXT_URL";
+                  var dataFileUrl = "$DATA_CSV_URL";
+                  var triageFileUrl = "$TRIAGER_CSV_URL";
 
                   // textFileUrl = "article_a09.txt";
                   // dataFileUrl = "viz_data_a09.csv";
@@ -319,10 +319,10 @@
             <div id = 'embed-frame'>
             </div>
             <script type="text/javascript">
-                // var originalUrl = "https://www.nytimes.com/";
-                // setTimeout(function () {
-                //     embed(originalUrl);
-                // }, 500);
+                var originalUrl = "$ORIGINAL_URL";
+                setTimeout(function () {
+                    embed(originalUrl);
+                }, 500);
             </script>
         </div>
 

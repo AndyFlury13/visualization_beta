@@ -48,10 +48,6 @@ var PSEUDOBOX;
 var ROOT;
 var SVG;
 var visualizationOn;
-var DEFINITION_SHOWING = false;
-var TOOLTIP_TEXT = '';
-
-var DEFINITION_EXAMPLE = "<p>\"\"\"Assuming without good reason that the past was superior to the present or future. The idea that things in the past were much better than the present in some unspecific way, or neglecting relevant ways in which the past was actually worse. E.g. \"This new generation, with their TikTok & video games, will never understand how great it was to grow up in the 20th century. If they did, their so-called FOMO (fear of missing out) would destroy them.\">E.g. \"Long gone are the times when you could walk down the street without encountering some person struggling just to live. Long gone is our Old California.\"\"\"\"</p>";
 
 function hallmark(data) {
 
@@ -64,27 +60,28 @@ function hallmark(data) {
 
 
 
+
   visualizationOn = false;
 
   var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("text-align", "center")
-    .style("margin", "auto");
+      .attr("class", "tooltip")
+      .style("opacity", 0)
+      .style("text-align", "center")
+      .style("margin", "auto");
 
   var triage_div = d3.select('body').append('div')
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("text-align", "center");
+      .attr("class", "tooltip")
+      .style("opacity", 0)
+      .style("text-align", "center")
 
   var pseudobox = d3.select("body").append("div")
-    .attr("class", "pseudobox")
-    .style("opacity", 1);
+      .attr("class", "pseudobox")
+      .style("opacity", 1);
 
   DIV = div;
   TRIAGE_DIV = triage_div;
-  PSEUDOBOX = pseudobox;
 
+  PSEUDOBOX = pseudobox;
   delete data["columns"];
   clean(data);
   data = addDummyData(data);
@@ -193,6 +190,15 @@ var double_question = center_style[6];
                 .style("opacity", 0);
         }
     })
+    .on('mouseleave', function(d) {
+      console.log('leaving');
+        resetVis(d);
+    }).on('click', function(d) {
+      scrolltoView(d)
+    })
+    .on('click', function(d) {
+        scrolltoView(d);
+    })
     .style("fill", colorFinderSun);
 
 
@@ -218,8 +224,6 @@ var double_question = center_style[6];
               } else {
                 document.body.style.cursor = "pointer";
               }
-            } else if (d.height == 1) {
-              document.body.style.cursor = "pointer";
             } else {
               document.body.style.cursor = "default";
             }
@@ -245,7 +249,6 @@ var double_question = center_style[6];
                         .style("left", (d3.event.pageX - width)+ "px")
                         .style("top", (d3.event.pageY) + "px")
                 }
-                div.html()
             } else {
                 div.transition()
                     .duration(10)
@@ -254,14 +257,13 @@ var double_question = center_style[6];
         })
         .on('mouseleave', function(d) {
             resetVis(d);
-            DEFINITION_SHOWING = false;
             document.body.style.cursor = "default";
+        }).on('click', function(d) {
+          scrolltoView(d);
+          pulse(d);
         })
         .on('click', function(d) {
-            DEFINITION_SHOWING = true;
             scrolltoView(d);
-            var textWithDefinition = addDefinition(TOOLTIP_TEXT);
-            drawTooltipDiv(div, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20));
             pulse(d);
         })
         .style("fill", colorFinderSun);
@@ -271,11 +273,6 @@ var double_question = center_style[6];
 }
 
 /****************************** HELPER FUNCTIONS ******************************/
-
-
-function addDefinition(text) {
-  return text + DEFINITION_EXAMPLE;
-}
 
 /* Function that provides the color based on the node.
     @param d: the node in the data heirarchy
@@ -314,7 +311,7 @@ function colorFinderSun(d) {
             } else if (d.parent.data.data['Credibility Indicator Name'] == "Holistic" ){
                 return d3.rgb(255, 180, 0);
             } else if (d.parent.data.data['Credibility Indicator Name'] == "Sourcing") {
-              return d3.rgb(201, 87, 198);
+              return d3.rgb(201, 87, 198)
             } else {
               return d3.rgb(255, 255, 255);
             }
@@ -464,31 +461,45 @@ function drawVis(d, root, me, div) {
     } else if (d.height == 1) {
         d3.select(nodeToPath.get(d.parent)).style('display', 'none');
     }
-    TOOLTIP_TEXT =  d.data.data['Credibility Indicator Name'];
-    var words = TOOLTIP_TEXT.split(" ");
+    var tooltip_text =  d.data.data['Credibility Indicator Name'];
+    var words = tooltip_text.split(" ");
     var longest = words.sort(
       function (a, b) {
         return b.length - a.length;
       }
     )[0];
     var max_width = Math.max(longest.length, 20);
-    var words_len = TOOLTIP_TEXT.length;
+    var words_len = tooltip_text.length;
     var start_index = d.data.data.Start;
     var end_index = d.data.data.End;
     var category = d.data.data["Credibility Indicator Category"]
     if (start_index == -1 || end_index == -1) {
       if (category == "Holistic") {
-        TOOLTIP_TEXT = TOOLTIP_TEXT + "<br><i>(Throughout article)</i></span>";
+        tooltip_text = tooltip_text + "<br><i>(Throughout article)</i></span>";
         words_len += "(Throughout article)".length;
       } else {
-        TOOLTIP_TEXT = TOOLTIP_TEXT + "<br><i>(No highlight in text)</i></span>";
+        tooltip_text = tooltip_text + "<br><i>(No highlight in text)</i></span>";
         words_len += "(No highlight in text)".length;
       }
     } else {
-      TOOLTIP_TEXT += "</span>";
+      tooltip_text += "</span>"
     }
-
-    drawTooltipDiv(div, TOOLTIP_TEXT, words_len, max_width);
+    div.transition()
+      .duration(200)
+      .style("opacity", .9);
+    div.html("<span style='display: inline-block; vertical-align:middle; line-height:normal;'>" + tooltip_text)
+      .style("left", (d3.event.pageX) + "px")
+      .style("top", (d3.event.pageY) + "px")
+      .style("width", function() {
+        if (words_len < 20) {
+          return words_len.toString() + "ch";
+        }
+        return max_width.toString() + "ch";
+      }).style("min-height", function() {
+        return "1ch";
+      }).style("height", function() {
+        return "fit-content";
+      });
 
     var pointsGained = scoreSum(d);
     SVG.selectAll(".center-text").style('display', 'none');
@@ -519,25 +530,7 @@ function drawVis(d, root, me, div) {
 }
 
 
-function drawTooltipDiv(div, text, words_len, max_width) {
-  div.transition()
-      .duration(200)
-      .style("opacity", .9);
-    div.html("<span style='display: inline-block; vertical-align:middle; line-height:normal;'>" + text)
-      .style("left", (d3.event.pageX) + "px")
-      .style("top", (d3.event.pageY) + "px")
-      .style("width", function() {
-        if (words_len < 20) {
-          return words_len.toString() + "ch";
-        }
-        console.log(max_width)
-        return max_width.toString() + "ch";
-      }).style("min-height", function() {
-        return "1ch";
-      }).style("height", function() {
-        return "fit-content";
-      });
-}
+
 
 /*
 Recursive function that returns a number that represents the total score of the given arc.
@@ -552,12 +545,10 @@ function scoreSum(d) {
     if (d.depth == 2) {
         if (d.data.data["Credibility Indicator Name"] == "Waiting for fact-checkers") {
           return 0;
-        }
-        if (isNaN(d.data.data.Points)) {
-          console.log("one of our values is NaN. We are returning zero for now.");
+        } else if (typeof d.data.data["Points"] === "undefined") {
           return 0;
         }
-        return Math.round(parseFloat(d.data.data.Points));
+        return Math.round(d.data.data.Points);
     } else {
         var sum = 0;
         for (var i = 0; i < d.children.length; i++) {
@@ -614,6 +605,7 @@ function normalSun() {
 // Returns
 //    [score_x, score_y, score_size, question_x, question_y, question_size]
 function getCenterStyle(num_nfc) {
+  console.log(num_nfc);
   switch(num_nfc) {
     case 0:
       return [0, 13, 40, 0, 0, 0, false]
