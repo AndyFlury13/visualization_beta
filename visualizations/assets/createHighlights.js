@@ -12,7 +12,7 @@ function handleMouseMove(event) {
 
   var box_y = event.pageY;
 
-  //TRIAGE_DIV.style("top", box_y + "px");
+  TRIAGE_DIV.style("top", box_y + "px");
 }
 
 function checkNullVisData(data) {
@@ -81,17 +81,15 @@ function scoreArticle(textFileUrl, dataFileUrl, triageFileUrl, userFileUrl) {
       DATA_FILE_URL = dataFileUrl;
       TRIAGE_FILE_URL = triageFileUrl;
       d3.text(textFileUrl, function(text) {
-        
+
           d3.csv(dataFileUrl, function(error, data) {
             if (error) {
               console.log(error);
               hideExtraElem();
               return;
             }
-            
             d3.csv(triageFileUrl, function(error, triage_data) {
               if (error) {
-                
                 console.log("No triage file found");
                 if (checkNullVisData(data)) {
                   hideExtraElem();
@@ -101,11 +99,9 @@ function scoreArticle(textFileUrl, dataFileUrl, triageFileUrl, userFileUrl) {
                 createHighlights(data, triage_data, text.toString());
                 hallmark(data);
               } else {
-                
                 if (checkNullVisData(data) || checkNullTriageData(triage_data)) {
                   hideExtraElem();
-                  console.log('hello');
-                  //return;
+                  return;
                 }
                 document.getElementById("textArticle").innerHTML = text.toString();
                 delete data['columns'];
@@ -250,22 +246,9 @@ function createTriageHighlights(json, textString, triage) {
   finalHTML = textArray.join('');
   document.getElementById('textArticle').innerHTML = finalHTML;
   $(".highlight").hover(triageHighlight, triageNormal);
-  $(".highlight").on("click", triageClick);
 }
 
 
-function triageClick() {
-  alert('help');
-  if (!DEFINITION_SHOWING) {
-   DEFINITION_SHOWING = true;
-    var textWithDefinition = addDefinition(TOOLTIP_TEXT);
-    drawTooltipDiv(div, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20));
-  } else {
-    DEFINITION_SHOWING = false;
-    document.body.style.cursor = "default";
-    resetVis(ROOT);
-  }
-}
 
 
 
