@@ -1,0 +1,695 @@
+Version: 5
+
+topic 1 Reasoning Specialist
+
+1.01 cl Does the passage of reasoning in (or around the) bold font … (check all that apply):
+1.01.01 State a faulty premise or assumption?
+"""
+This task guides you to find reasoning errors. But sometimes the problem with an argument is not flawed reasoning but just a flawed premise or assumption.
+
+*A premise is a claim of fact that is meant to support an argument's conclusion.* Sometimes premises are assumed without being stated. Sometimes they are made explicit.
+
+>E.g. "Since people show up here for food and not to watch sports, our broken television should not hurt our business." The assumption is that people come for food, not sports.
+
+>E.g. In the following argument, the first sentence is an incorrect premise/assumption: "All swans are white. Bob has bought a swan. Therefore, Bob's swan must be white."
+
+In fact, there exist black swans (and they are quite beautiful). The reasoning of the argument above is perfectly sound. But the conclusion is incorrect because one of the premises is false.
+"""
+
+1.01.02 Imply a faulty premise or assumption not stated in the text?
+"""
+This task guides you to find reasoning errors. But sometimes the problem with an argument is not flawed reasoning but just a flawed premise or assumption.
+
+*A premise is a claim of fact that is meant to support an argument's conclusion.* Sometimes premises are assumed without being stated. Sometimes they are made explicit. Choose this answer if you think there is a flawed premise or assumption relevant to the bold text that is not stated.
+
+>E.g. "Nobody can win a 'best actor' award and a 'best supporting' actor award in the same year." Here, the unstated assumption is that actors can only be nominated for one award per year.
+"""
+
+1.01.03 Include flawed reasoning/inferences?
+"""Inferences are conclusions drawn from premises and/or evidence. Most reasoning errors result from people drawing the wrong conclusions from premises or evidence.
+
+>E.g. "Barbara is tall. And Susan is tall. Therefore, they are the same height." This reasoning is flawed because the conclusion cannot be proven by the premises/evidence. While both women may be tall, we don't have reason to believe they are precisely the same height.
+"""
+
+1.01.04 I don't see any faulty assumptions or flawed reasoning.
+
+options 1.01 alpha_distance="nominal"
+
+#this is just a warm up question that will also help the PE team discover if (and how many) reasoning errors are actually faulty assumptions. The PE team will consider adding a faulty assumptions label to the system
+
+options 1.01.04 highlight=False
+if 1.01.01, then 1.03
+if 1.01.02, then 1.02
+if 1.01.02, then 1.03
+
+1.02 tx What is the assumption implied by the passage in (or around the) bold font?
+options 1.02.* highlight=False
+
+1.03 mc You've indicated that the passage of reasoning relies on some flawed assumption or premise. How misleading is that assumption in this context?
+"""This question is intended to get at how problematic the assumption really is, in its context. To what extent is the assumption you've identified a distortion of reality that could lead readers to a faulty conclusion? """
+1.03.01 Extremely misleading
+1.03.02 Very misleading
+1.03.03 Somewhat misleading
+1.03.04 Slightly misleading
+1.03.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.03.06 Not misleading at all
+
+options 1.03.* highlight=False
+options 1.03 alpha_distance="ordinal"
+#Eric, answers to this question should apply to the score for the Faulty Assumption label
+
+
+1.04 cl Does the passage in (and immediately around) the bold font contain any of the following general patterns of reasoning error?
+
+1.04.01 Questionable evaluation of something as good or bad, appropriate or inappropriate.
+"""E.g. Fallacies like just world, sunk cost, good old days, naturalistic, slippery slope, status quo bias. Other problematic evaluation of something as good or bad."""
+1.04.02 Questionable prediction or evaluation of a likelihood or frequency.
+"""Biases and fallacies like gambler’s fallacy, stereotyping, availability, hindsight bias. Other misleading reasoning about likelihood or prediction."""
+1.04.03 Misrepresenting an opponent, their argument, or their position.
+"""Reasoning fallacies that arise when people critique opposing arguments in uncharitable ways, such as straw man, ad hominem, false dilemma, or false equivalence. Other misrepresentation of an opposing argument or position."""
+1.04.04 Other rhetorical misdirection.
+"""False dilemma, circular logic, equivocation, red herring, before therefore because, appeal from ignorance, false equivalence, both-sidesing/false balance. Other rhetorical trickery."""
+1.04.05 No fallacy or bias that I can see
+
+options 1.04.05 highlight=False
+
+If 1.04.01, then 1.05
+If 1.04.02, then 1.13
+If 1.04.03, then 1.19
+If 1.04.04, then 1.25
+
+1.05 cl You said there was some questionable evaluation of something as good or bad, appropriate or inappropriate. Do you see any of the following fallacies?
+1.05.01 Just World Fallacy
+"""Arguing that something must be just/fair/proper simply because it is the way society works.
+
+> E.g. "This industry is hard on some ecosystems, and it can be tough on the loggers, but that is just how the world works. Everyone has to play their part."
+
+>E.g. "The Senator's Uncle and Grandfather held seats of power for a half-century. So, it seemed fitting, like the revolution of some cosmic clock, that she would carry forward their legacy now."
+
+*The things people do may be good or bad, but that can't be determined simply by comparing them to what has been accepted before.*"""
+
+1.05.02 Good Old Days Fallacy
+"""Assuming without good reason that the past was superior to the present or future.
+
+The idea that things in the past were much better than the present in some unspecific way, or neglecting relevant ways in which the past was actually worse.
+
+>E.g. "This new generation, with their TikTok & video games, will never understand how great it was to grow up in the 20th century. If they did, their so-called FOMO (fear of missing out) would destroy them."
+
+>E.g. "Long gone are the times when you could walk down the street without encountering some person struggling just to live. Long gone is our Old California."
+"""
+1.05.03 Naturalistic Fallacy
+"""Assuming the way things are implies the way things ought to be.
+
+> E.g. "Nature gives people diseases and sickness; therefore, it is morally wrong to interfere with nature and treat sick people with medicine."
+
+>E.g. "As the rain falls, and the sun shines, and the wheat grows in the fields, so mankind must always yearn for more beer."
+
+*Yes, we like nature a lot. But associating your idea with nature, doesn't make your idea correct.*"""
+
+1.05.04 Slippery Slope Fallacy
+"""A chain of if-thens with dubious or false steps.
+
+Promoting worries that some small change will somehow lead to a major catastrophic change.
+
+> E.g. "If you break your diet and have one cookie tonight, you will just want to eat 10 cookies tomorrow, and before you know it, you will have gained back the 40 pounds you lost."
+
+> E.g. "First, they come for the birdseed, but then the squirrels get greedy and they want into the house. Next thing you know, they're waking you up at 2am by jumping on your face and scratching at your eyes. That's why it's a terrible idea to put birdseed on the porch."
+
+*Most small changes do not lead to large changes. Things may change, and some changes may lead to other changes, but it’s by no means inevitable.*
+"""
+
+1.05.05 Status quo bias
+"""Status quo bias is the tendency to think the status quo is good, and change would only make things worse.
+
+Change can make things either worse or better. Sometimes the status quo isn’t even stable, and keeping it isn’t a real option. The default is not always the safest choice.
+
+> E.g. "I won’t change my cell phone service even though I hate them, because I’ve been with them too long."
+
+> E.g. "We shouldn’t let any other political parties get time on the political debate stage, because we’ve always had a two party system."
+"""
+
+1.05.06 Sunk Cost Fallacy
+
+"""Arguing for continuing something because time and resources have been spent on it.
+
+Ideally, people should make their best calculation about whether more investment will really help, without regard for their prior investment.
+
+> E.g. "With $700 Billion spent and many lives lost already, failure is not an option. We must send reinforcements."
+"""
+
+1.05.07 Other misleading reasoning about something being good or bad
+
+If 1.05.01, then 1.06 #just world
+If 1.05.02, then 1.07 #good old days
+If 1.05.03, then 1.08 #naturalistic
+If 1.05.04, then 1.09 #slippery slope
+If 1.05.05, then 1.10 #status quo
+If 1.05.06, then 1.11 #sunk cost
+If 1.05.07, then 1.12 #other misleading reasoning about something as good or bad
+
+1.06 mc You noticed a possible instance of the Just World Fallacy. How questionable or misleading is it?
+1.06.01 Extremely misleading
+1.06.02 Very misleading
+1.06.03 Moderately misleading
+1.06.04 Mildly misleading
+1.06.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.06.06 Not misleading at all
+
+options 1.06.* highlight=False
+options 1.06 alpha_distance="ordinal"
+
+
+1.07 mc You noticed a potential Good Old Days fallacy. How questionable or potentially misleading is it?
+1.07.01 Extremely misleading
+1.07.02 Very misleading
+1.07.03 Somewhat misleading
+1.07.04 Slightly misleading
+1.07.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.07.06 Not misleading at all
+
+options 1.07.* highlight=False
+options 1.07 alpha_distance="ordinal"
+
+1.08 mc You noticed a possible naturalistic fallacy. How questionable or potentially misleading is it?
+1.08.01 Extremely misleading
+1.08.02 Very misleading
+1.08.03 Somewhat misleading
+1.08.04 Slightly misleading
+1.08.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.08.06 Not misleading at all
+
+options 1.08.* highlight=False
+options 1.08 alpha_distance="ordinal"
+
+1.09 mc You noticed a possible slippery slope fallacy. How questionable or potentially misleading is it?
+1.09.01 Extremely misleading
+1.09.02 Very misleading
+1.09.03 Somewhat misleading
+1.09.04 Slightly misleading
+1.09.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.09.06 Not misleading at all
+
+options 1.09.* highlight=False
+options 1.09 alpha_distance="ordinal"
+
+1.10 mc You noticed a possible status quo bias. How misleading or problematic is it?
+1.10.01 Extremely misleading
+1.10.02 Very misleading
+1.10.03 Somewhat misleading
+1.10.04 Slightly misleading
+1.10.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.10.06 Not misleading at all
+
+options 1.10.* highlight=False
+options 1.10 alpha_distance="ordinal"
+
+1.11 mc You noticed a possible sunk cost fallacy. How questionable or potentially misleading is it?
+1.11.01 Extremely misleading
+1.11.02 Very misleading
+1.11.03 Somewhat misleading
+1.11.04 Slightly misleading
+1.11.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.11.06 Not misleading at all
+
+options 1.11.* highlight=False
+options 1.11 alpha_distance="ordinal"
+
+1.12 mc You noticed some misleading reasoning about something as good or bad. How questionable or potentially misleading is it?
+1.12.01 Extremely misleading
+1.12.02 Very misleading
+1.12.03 Somewhat misleading
+1.12.04 Slightly misleading
+1.12.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.12.06 Not misleading at all
+
+options 1.12.* highlight=False
+options 1.12 alpha_distance="ordinal"
+
+1.13 cl You noticed some questionable prediction or evaluation of a likelihood or frequency. Do you see any of the following fallacies?
+1.13.01 Gambler’s fallacy
+"""The idea that if things happened one way before, they will happen differently next time to balance things out.
+
+> E.g. Consider a series of 4 coin flips that have all landed heads' side up. Under the Gambler's Fallacy, a person might predict that the next coin flip is more likely to land tails up. But the likelihood of the coin turning up heads is always 50%. Each coin flip is an independent event, which means that previous flips have no bearing on future flips.
+
+>E.g "Our people have been down for too long. We are due for some better luck, and now is the time!"
+"""
+1.13.02 Stereotyping
+"""Generalizing from a sample that is obviously too small.
+
+Assuming that a member of some group has certain properties simply because their group is associated with those properties.
+> E.g. "She's got Asian heritage, so she's probably really good at math."
+
+>E.g. "He's from a middle class family on the East Coast, so he's probably a baseball fan."
+
+>E.g. "They're American, what do you expect?"
+
+*We don't need to pretend that every culture is exactly the same as all the others. But we also can't assume that the individuals within any group are all the same as each other. Take the time to see individuals as individuals.*
+"""
+1.13.03 Availability heuristic
+"""Wrongly judging frequency or probability based on how easy it is to think of examples.
+
+We tend to overestimate the general likelihood and frequency of things we’ve encountered recently (e.g. in the news), that are particularly vivid (e.g. a plane crash), or which we personally have encountered.
+
+> E.g. After reading an article about a lottery winner, Helen started spending more money each week on lottery tickets.
+
+*Reading about lottery winners doesn’t increase the likelihood of you winning, which is pretty much always extremely low. It just increases the salience of that very unlikely possibility.*
+
+>E.g. Watching crime dramas can lead people to believe that crime is more prevalent than it is.
+
+>E.g. "Everyone's talking about how the climate is changing. That's probably what caused yesterday's earthquake."
+
+*There are a lot of careful studies people can read to learn about how the Earth's climate has changed over the last few thousand years. But there are probably better explanations for yesterday's earthquake than climate change, even if it is a topic that gets discussed a lot.*
+
+"""
+1.13.04 Hindsight Bias
+ """Overestimating the probability of an event in favor of what actually happened.
+
+Treating past ignorance as foolish simply because now we know more. Or, treating what has already happened as obvious and inevitable when few could have predicted it at the time.
+
+> E.g. The musician Taylor Swift may have been experiencing the Hindsight Bias when she wrote the lyric: ‘I knew you were trouble when you walked in.’
+
+*Since the song is about a person she had a relationship with, she probably did not think the person would be so troublesome. If she had, she wouldn’t have begun the relationship.*
+
+![Taylor Swift and Hindsight Bias](http://www.psychyogi.org/wp-content/uploads/2014/10/37969857-e1414318776439.jpg)"""
+
+1.13.05 Other misleading reasoning about likelihood or prediction
+
+If 1.13.01, then 1.14 #Gamblers
+If 1.13.02, then 1.15 #Stereotyping
+If 1.13.03, then 1.16 #Availability
+If 1.13.04, then 1.17 #Hindsight Bias
+If 1.13.05, then 1.18 #Other
+
+
+1.14 mc You noticed a possible Gambler’s Fallacy. How questionable or potentially misleading is it?
+1.14.01 Extremely misleading
+1.14.02 Very misleading
+1.14.03 Somewhat misleading
+1.14.04 Slightly misleading
+1.14.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.14.06 Not misleading at all
+
+options 1.14.* highlight=False
+options 1.14 alpha_distance="ordinal"
+
+1.15 mc You noticed a possible Stereotype Bias. How questionable or potentially misleading is it?
+1.15.01 Extremely misleading
+1.15.02 Very misleading
+1.15.03 Somewhat misleading
+1.15.04 Slightly misleading
+1.15.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.15.06 Not misleading at all
+
+options 1.15.* highlight=False
+options 1.15 alpha_distance="ordinal"
+
+1.16 mc You noticed a possible Availability Heuristic. How questionable or potentially misleading is it?
+1.16.01 Extremely misleading
+1.16.02 Very misleading
+1.16.03 Somewhat misleading
+1.16.04 Slightly misleading
+1.16.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.16.06 Not misleading at all
+
+options 1.16.* highlight=False
+options 1.16 alpha_distance="ordinal"
+
+1.17 mc You noticed a possible Hindsight Bias. How questionable or potentially misleading is it?
+1.17.01 Extremely misleading
+1.17.02 Very misleading
+1.17.03 Somewhat misleading
+1.17.04 Slightly misleading
+1.17.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.17.06 Not misleading at all
+
+options 1.17.* highlight=False
+options 1.17 alpha_distance="ordinal"
+
+1.18 mc You noticed misleading reasoning about likelihood or frequencies. How questionable or potentially misleading is it?
+1.18.01 Extremely misleading
+1.18.02 Very misleading
+1.18.03 Somewhat misleading
+1.18.04 Slightly misleading
+1.18.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.18.06 Not misleading at all
+
+options 1.18.* highlight=False
+options 1.18 alpha_distance="ordinal"
+
+1.19 cl You noticed a misrepresentation of an opposing argument or position. Do you see any of the following fallacies?
+1.19.01 Straw Man
+"""Criticizing someone for a position they didn’t say or imply, or for a much sillier, weaker, or more extreme version of their position.
+
+> E.g. After Jamila said, "we should shift more of the federal budget into cyber-warfare defense," Benji responded by saying he was surprised Jamila "hates poor children so much that she wants to leave them uneducated and starving."
+
+>E.g. "The proponents of these health care subsidies say that everyone deserves a right to whatever procedures they want. They'll get unlimited plastic surgery, and unlimited organ transplants. They can drink whiskey all day and night and get a new liver every year."
+
+*Regardless of which policies we support, let's be honest about what others think. If we all strive to improve the thinking of all, we’re more likely to find better solutions to our problems.*
+"""
+1.19.02 Ad Hominem
+"""Attacking and discrediting an opponent as a person instead of arguing against their ideas.
+
+> E.g. "Members of that party are scoundrels. We can't believe anything they say."
+
+>E.g. "That building company has been alleged by many to collaborate with bandits and drug dealers, so there's little reason to trust them at all, even about housing construction."
+
+>E.g. "The Portland Gazetteer, which is better described as a cheap tabloid than a newspaper, managed to get an interview with the train's conductor."
+
+*Ideas should be evaluated on their own merits, not on the basis of the character of whoever suggests them.*
+"""
+1.19.03 False Equivalence
+"""Implying that two things are equivalent or comparable which are really quite different.
+
+>E.g. "Requiring face masks and proof of vaccination to enter a restaurant is just like the policies of murderous authoritarian regimes throughout history."
+
+>E.g. "Both teams engaged in very poor behavior during the competitive match. The home team had 25 penalties against them, while the visitors also earned two penalties for their careless violations of league rules."
+
+>E.g. "As the Romans fell, so too shall the Americans. It is what happens when any society stays so large for so long."
+
+>E.g. "The two political parties are exactly the same. No matter which you vote for, it won't make a difference."
+
+*The fact that two entities are similar in one or two aspects does not mean we can ignore their differences.*
+"""
+1.19.04 False Dilemma
+"""Presenting a complex decision as if there were only two possible options.
+
+> E.g. "We can either have policy A or policy B. Choose one or the other."
+
+>E.g. "The struggling coastal city really has no choice. It can either join the trading partnership, or face certain economic catastrophe."
+
+*In fact, there might be other options worth considering, and there are usually more possibilities than the two extremes.*"""
+
+1.19.05 Other misrepresentation of an opposing argument or position
+
+If 1.19.01, then 1.20 #straw man
+If 1.19.02, then 1.21 #ad hominem
+If 1.19.03, then 1.22 #false equivalence
+If 1.19.04, then 1.23 #false dilemma
+If 1.19.05, then 1.24 # other misrepresentation
+
+1.20 mc You noticed a straw man argument, a representation of the counterargument as more extreme or weak than it really is. How misleading is it?
+1.20.01 Extremely misleading
+1.20.02 Very misleading
+1.20.03 Moderately misleading
+1.20.04 Mildly misleading
+1.20.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.20.06 Not misleading at all
+
+options 1.20.* highlight=False
+options 1.20 alpha_distance="ordinal"
+
+1.21 mc You noticed an ad hominem argument, a critique of the person instead of the argument. How misleading is it?
+1.21.01 Extremely misleading
+1.21.02 Very misleading
+1.21.03 Moderately misleading
+1.21.04 Mildly misleading
+1.21.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.21.06 Not misleading at all
+
+options 1.21.* highlight=False
+options 1.21 alpha_distance="ordinal"
+
+1.22 mc You noticed a false equivalence, the equating of two very different things. How misleading is it?
+1.22.01 Extremely misleading
+1.22.02 Very misleading
+1.22.03 Moderately misleading
+1.22.04 Mildly misleading
+1.22.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.22.06 Not misleading at all
+
+options 1.22.* highlight=False
+options 1.22 alpha_distance="ordinal"
+
+1.23 mc You noticed a false dilemma, the implication that there are only two options when there may be others. How misleading is it?
+1.23.01 Extremely misleading
+1.23.02 Very misleading
+1.23.03 Moderately misleading
+1.23.04 Mildly misleading
+1.23.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.23.06 Not misleading at all
+
+options 1.23.* highlight=False
+options 1.23 alpha_distance="ordinal"
+
+1.24 mc You noticed a misrepresentation of an opposing argument or position. How misleading is it?
+1.24.01 Extremely misleading
+1.24.02 Very misleading
+1.24.03 Moderately misleading
+1.24.04 Mildly misleading
+1.24.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.24.06 Not misleading at all
+options 1.24.* highlight=False
+options 1.24 alpha_distance="ordinal"
+
+1.25 cl You noticed some rhetorical misdirection not captured by any of the other descriptors. Do you see any of the following fallacies?
+1.25.01 False Dilemma
+"""Presenting a complex decision as if there were only two possible options.
+
+> E.g. "We can either have policy A or policy B. Choose one or the other."
+
+>E.g. "The struggling coastal city really has no choice. It can either join the trading partnership, or face certain economic catastrophe."
+
+*In fact, there might be other options worth considering, and there are usually more possibilities than the two extremes.*"""
+
+1.25.02 Circular Logic/Begging the Question
+"""Using a premise that is just as controversial as the conclusion it’s supporting, often a restatement of the issue in question.
+
+Drawing a conclusion that is  a restatement of the original question, without further evidence or argument.
+
+> E.g. "The 'Hyperventilating Elmo' doll is the most popular toy of the season because everyone wants one so badly!"
+
+>E.g. "It is not possible to eat peanut butter and pickles in the same moment. You just can't do it."
+"""
+1.25.03 Equivocation
+"""A bad argument based on ambiguity (multiple meanings).
+> E.g. "Our pastor told me I should have more **faith**. I have **faith** that my children will do well in school this year. So, our pastor should be happy with me."
+
+>E.g. "A meatball sandwich is better than **nothing**. And **nothing** is better than eternal happiness. Therefore a meatball sandwich is better than eternal happiness."
+"""
+1.25.04 Red Herring
+"""An argument that’s not actually relevant to the question or conclusion at hand.
+
+> E.g. Andrea: "Hey, what's with all this junk food you bought? You're always railing at me about eating healthy." Bethany: "Don't fuss -- it was on sale."
+
+>E.g. "The centrist party has been blamed by many for failing to uphold its commitment to equitable economic growth. But the party's leaders have been more vocal recently, releasing a video explaining their foreign policy goals, and how they plan to build an international collaboration achieving regular planetary tourism by 2075."
+"""
+1.25.05 After Therefore Because of
+"""Also known as post hoc ergo propter hoc, which is just Latin for the same thing, this fallacy is when someone claims A caused B simply because A happened before B. Although A coming before B is certainly consistent with A causing B, it’s not even close to enough evidence for that inference.
+
+> E.g. "Despite the many issues the organizers encountered, they didn’t cancel the debate until CNN ran an ad against one of the candidates."
+
+In some articles the causal connection may be implied, and not said outright. It can still be misleading.
+"""
+1.25.06 Appeal to Ignorance
+"""Using the absence of knowledge or evidence for a position as an argument for the contrary position.
+
+> E.g. "No one has proved Bigfoot doesn’t exist. So he must be real."
+
+>E.g. "We don't know where Jeremiah was on Tuesday, so why shouldn't we wonder if he was involved? We're only asking questions. And for some reason, no one seems to have any answers."
+
+*Absence of evidence does not constitute evidence of absence.*
+"""
+1.25.07 False Equivalence
+"""Implying that two things are equivalent or comparable which are really quite different.
+
+>E.g. "Requiring face masks and proof of vaccination to enter a restaurant is just like the policies of murderous authoritarian regimes throughout history."
+
+>E.g. "Both teams engaged in very poor behavior during the competitive match. The home team had 25 penalties against them, while the visitors also earned two penalties for their careless violations of league rules."
+
+>E.g. "As the Romans fell, so too shall the Americans. It is what happens when any society stays so large for so long."
+
+>E.g. "The two political parties are exactly the same. No matter which you vote for, it won't make a difference."
+
+*The fact that two entities are similar in one or two aspects does not mean we can ignore their differences.*"""
+
+1.25.08 Both-sidesing/false balance
+"""Suggesting that two sides of an issue or two groups are equally legitimate without evaluating the merit of their ideas, evidence, reasoning, etc.
+> E.g. "While the Yellow political party has rallied thousands of experts and scientists to create documentation showing how lead has seeped into the water supply and how it can be corrected, the spokeswoman for the Purple party insists that their own scientists have completed an independent study concluding that the levels of lead in the water are safe, even for small children." Here, the journalist has failed to provide any additional information or evaluation of the evidence from each side of this debate. They have merely offered a perspective from both sides, providing a false sense of balance to the newsreader, along with a sense that the issue can/should be decided by rhetoric instead of careful analysis.
+
+"""
+
+1.25.09 Other Rhetorical Misdirection
+"""Choose this option if you don’t see any of the fallacies above but you still think there’s a problematic argument or chain of reasoning that doesn’t quite follow."""
+
+
+##Label with higher category description if only agreement at that level.
+##Label with specific bias/fallacy if at least two people mark the same one.
+
+If 1.25.01, then 1.26 #false dilemma
+If 1.25.02, then 1.27 #circular logic
+If 1.25.03, then 1.28 #equivocation
+If 1.25.04, then 1.29 #red herring
+If 1.25.05, then 1.30 #after therefore because of
+If 1.25.06, then 1.31 #appeal to ignorance
+If 1.25.07, then 1.32 #false equivalence
+If 1.25.08, then 1.33 #both sidesing
+If 1.25.09, then 1.34 #other rhetorical misdirection
+
+1.26 mc You noticed a false dilemma, in which it is implied that there are only two options when in fact there are more than two. How misleading is it?
+1.26.01 Extremely misleading
+1.26.02 Very misleading
+1.26.03 Moderately misleading
+1.26.04 Mildly misleading
+1.26.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.26.06 Not misleading at all
+
+options 1.26.* highlight=False
+options 1.26 alpha_distance="ordinal"
+
+1.27 mc You noticed circular logic/a begged question, in which the issue at hand is simply reasserted, or something even more debatable claimed. How misleading is it?
+1.27.01 Extremely misleading
+1.27.02 Very misleading
+1.27.03 Moderately misleading
+1.27.04 Mildly misleading
+1.27.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.27.06 Not misleading at all
+
+options 1.27.* highlight=False
+options 1.27 alpha_distance="ordinal"
+
+1.28 mc You noticed a case of potential equivocation, in which a word is used confusingly in more than one way. How misleading is it?
+1.28.01 Extremely misleading
+1.28.02 Very misleading
+1.28.03 Moderately misleading
+1.28.04 Mildly misleading
+1.28.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.28.06 Not misleading at all
+
+options 1.28.* highlight=False
+options 1.28 alpha_distance="ordinal"
+
+1.29 mc You noticed a red herring, in which an irrelevant argument is given to distract from the main point. How misleading is it?
+1.29.01 Extremely misleading
+1.29.02 Very misleading
+1.29.03 Moderately misleading
+1.29.04 Mildly misleading
+1.29.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.29.06 Not misleading at all
+
+options 1.29.* highlight=False
+options 1.29 alpha_distance="ordinal"
+
+1.30 mc You noticed a case of After Therefore Because Of (post hoc ergo propter hoc), in which it is implied that A caused B simply because A happened before B. How misleading is it?
+1.30.01 Extremely misleading
+1.30.02 Very misleading
+1.30.03 Moderately misleading
+1.30.04 Mildly misleading
+1.30.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.30.06 Not misleading at all
+
+options 1.30.* highlight=False
+options 1.30 alpha_distance="ordinal"
+
+1.31 mc You noticed a case of Appeal to Ignorance, in which absence of evidence is given as evidence for the opposite. How misleading is it?
+1.31.01 Extremely misleading
+1.31.02 Very misleading
+1.31.03 Moderately misleading
+1.31.04 Mildly misleading
+1.31.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.31.06 Not misleading at all
+
+options 1.31.* highlight=False
+options 1.31 alpha_distance="ordinal"
+
+1.32 mc You noticed a case of False Equivalence, in which two very different things are compared or considered equivalent. How misleading is it?
+1.32.01 Extremely misleading
+1.32.02 Very misleading
+1.32.03 Moderately misleading
+1.32.04 Mildly misleading
+1.32.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.32.06 Not misleading at all
+
+options 1.32.* highlight=False
+options 1.32 alpha_distance="ordinal"
+
+1.33 mc You noticed a case of Both-Sidesing/False Balance, in which it is implied that two sides have equal footing when in fact one side is much less reasonable. How misleading is it?
+1.33.01 Extremely misleading
+1.33.02 Very misleading
+1.33.03 Moderately misleading
+1.33.04 Mildly misleading
+1.33.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.33.06 Not misleading at all
+
+options 1.33.* highlight=False
+options 1.33 alpha_distance="ordinal"
+
+1.34 mc You noticed a different form of rhetorical misdirection. How misleading is it?
+1.34.01 Extremely misleading
+1.34.02 Very misleading
+1.34.03 Moderately misleading
+1.34.04 Mildly misleading
+1.34.05 Questionable
+"""By choosing 'Questionable' you are recommending that the Public Editor system deduct 0 points from the article while labeling the questionable text so that newsreaders treat it with cautious skepticism.
+"""
+1.34.06 Not misleading at all
+
+options 1.34.* highlight=False
+options 1.34 alpha_distance="ordinal"
+
+1.35 mc How confident are you about your answers for this task?
+1.35.01 1: I was guessing randomly for everything
+1.35.02 2
+1.35.03 3
+1.35.04 4: Somewhat confident
+1.35.05 5
+1.35.06 6
+1.35.07 7: 100% certain about all my answers
+
+options 1.35.* highlight=False
+options 1.35 alpha_distance="ordinal"
+
+1.36 tx Is there anything about the interface, instructions, or question wording that could be improved to make tasks like this easier?
+
+options 1.36.* highlight=False

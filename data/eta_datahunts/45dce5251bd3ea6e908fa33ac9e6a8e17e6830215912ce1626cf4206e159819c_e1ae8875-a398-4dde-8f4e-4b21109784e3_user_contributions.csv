@@ -1,0 +1,19 @@
+,Credibility Indicator Category,Question Number,Answer Number,Point Recommendation,Credibility Indicator Name,Start,End
+76,Evidence,2.0,1.0,0.0,Quality of evidence,2037,2236
+77,Evidence,2.0,2.0,0.0,Quality of evidence,2163,2180
+79,Evidence,2.0,4.0,0.0,Quality of evidence,2238,2534
+87,Evidence,4.0,3.0,-1.0,Sample representativeness,0,0
+101,Evidence,8.0,3.0,-2.0,Alternative explanation,0,0
+106,Evidence,10.0,3.0,-1.0,Statistical uncertainty,0,0
+111,Evidence,11.0,3.0,-1.0,Systematic uncertainty,0,0
+115,Evidence,12.0,2.0,1.0,Open to evidence,3030,3035
+115,Evidence,12.0,2.0,1.0,Open to evidence,2559,2584
+115,Evidence,12.0,2.0,1.0,Open to evidence,2894,2902
+76,Evidence,2.0,1.0,0.0,Quality of evidence,1401,1937
+77,Evidence,2.0,2.0,0.0,Quality of evidence,1213,1266
+78,Evidence,2.0,3.0,0.0,Quality of evidence,1326,1399
+90,Evidence,4.0,6.0,-2.0,Sample representativeness,0,0
+102,Evidence,8.0,4.0,-1.0,Alternative explanation,0,0
+108,Evidence,10.0,5.0,0.0,Statistical uncertainty,0,0
+112,Evidence,11.0,4.0,-0.5,Systematic uncertainty,0,0
+115,Evidence,12.0,2.0,1.0,Open to evidence,1794,1806

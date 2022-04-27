@@ -1,0 +1,11 @@
+Article ID,Credibility Indicator ID,Credibility Indicator Category,Credibility Indicator Name,Points,Indices of Label in Article,Start,End,target_text
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S0,Sourcing,Qualified Source,0.9172226761959515,[],-1,-1,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S1,Sourcing,Qualified Source,0.9172226761959515,[],-1,-1,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S2,Sourcing,Vague Sourcing,-2.0,"range(9828, 10137)",9828,10137,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S3,Sourcing,Vague Sourcing,-2.0,"range(11755, 11786)",11755,11786,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S3,Sourcing,Vague Sourcing,0,"range(11788, 11984)",11788,11984,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S4,Sourcing,Vague Sourcing,-2.0,"range(11575, 11751)",11575,11751,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S5,Sourcing,Vague Sourcing,-2.0,"range(150, 314)",150,314,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S5,Sourcing,Vague Sourcing,0,"range(317, 344)",317,344,nan
+8c09a43a7947c35e501d99dc1f93bab451282270dbb08711492685fd534edcc3,S5,Sourcing,Vague Sourcing,0,"range(12219, 12402)",12219,12402,nan
+,,,,,,,,

@@ -1,0 +1,29 @@
+Article ID,Credibility Indicator ID,Credibility Indicator Category,Credibility Indicator Name,Points,Indices of Label in Article,Start,End,target_text
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E0,Evidence,Data-Driven Evidence,2.0,"range(1612, 1644)",1612,1644,Italian export lost 3.6bln euros//break//greatest losses//break//suffered over 72% of the export reduction to Russia//break//
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E0,Evidence,Data-Driven Evidence,0,"range(1743, 1758)",1743,1758,Italian export lost 3.6bln euros//break//greatest losses//break//suffered over 72% of the export reduction to Russia//break//
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E0,Evidence,Data-Driven Evidence,0,"range(1825, 1876)",1825,1876,Italian export lost 3.6bln euros//break//greatest losses//break//suffered over 72% of the export reduction to Russia//break//
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E1,Evidence,Statistical confidence,1.0,"range(1612, 1644)",1612,1644,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E1,Evidence,Statistical confidence,0,"range(1743, 1758)",1743,1758,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E1,Evidence,Statistical confidence,0,"range(1825, 1876)",1825,1876,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E2,Evidence,nan,nan,"range(1612, 1677)",1612,1677,"Italian export lost 3.6bln euros"" because of the sanctions regime//break//Lombardia, Emilia-Romagna and Veneto have the greatest losses given a ban on trading with Russia, as namely these three regions suffered over 72% of the export reduction to Russia//break//"
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E2,Evidence,nan,0,"range(1697, 1876)",1697,1876,"Italian export lost 3.6bln euros"" because of the sanctions regime//break//Lombardia, Emilia-Romagna and Veneto have the greatest losses given a ban on trading with Russia, as namely these three regions suffered over 72% of the export reduction to Russia//break//"
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E3,Evidence,nan,nan,"range(1612, 1677)",1612,1677,"Italian export lost 3.6bln euros"" because of the sanctions regime//break//Lombardia, Emilia-Romagna and Veneto have the greatest losses given a ban on trading with Russia, as namely these three regions suffered over 72% of the export reduction to Russia//break//"
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E3,Evidence,nan,0,"range(1697, 1876)",1697,1876,"Italian export lost 3.6bln euros"" because of the sanctions regime//break//Lombardia, Emilia-Romagna and Veneto have the greatest losses given a ban on trading with Russia, as namely these three regions suffered over 72% of the export reduction to Russia//break//"
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E4,Evidence,nan,nan,"range(1612, 1677)",1612,1677,"Lombardia, Emilia-Romagna and Veneto have the greatest losses given a ban on trading with Russia, as namely these three regions suffered over 72% of the export reduction to Russia//break//"
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E4,Evidence,nan,0,"range(1697, 1876)",1697,1876,"Lombardia, Emilia-Romagna and Veneto have the greatest losses given a ban on trading with Russia, as namely these three regions suffered over 72% of the export reduction to Russia//break//"
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,E5,Evidence,Alternative explanation,-1.0,[],-1,-1,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,L0,Language,Inappropriate Slang,-0.75,"range(1132, 1148)",1132,1148,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,L1,Language,Denigration,-4.5,"range(1132, 1148)",1132,1148,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,L2,Language,Writing errors,-2.5439907196648495,"range(1127, 1155)",1127,1155,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,L3,Language,Writing errors,-1.2972388877153724,"range(1224, 1250)",1224,1250,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,L4,Language,Writing errors,-1.0171078576689565,"range(2221, 2226)",2221,2226,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,L5,Language,Writing errors,-1.2719953598324247,"range(155, 173)",155,173,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,R0,Reasoning,Hindsight Bias,-6.0,"range(2149, 2250)",2149,2250,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,R1,Reasoning,Straw Man Fallacy,-6.0,"range(2149, 2250)",2149,2250,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,S0,Sourcing,Vague Sourcing,-2.0,"range(120, 172)",120,172,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,S0,Sourcing,Vague Sourcing,0,"range(709, 722)",709,722,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,S0,Sourcing,Vague Sourcing,0,"range(725, 1071)",725,1071,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,S0,Sourcing,Vague Sourcing,0,"range(1384, 1553)",1384,1553,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,S0,Sourcing,Vague Sourcing,0,"range(1579, 1676)",1579,1676,nan
+a06ca613fe2c7f47e4c8c32c540b6850cc3fb61559d90ebbc835f2e52e19c029,S0,Sourcing,Vague Sourcing,0,"range(1681, 1875)",1681,1875,nan
+,,,,,,,,
