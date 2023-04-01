@@ -12,7 +12,7 @@ function handleMouseMove(event) {
 
   var box_y = event.pageY;
 
-  //TRIAGE_DIV.style("top", box_y + "px");
+  TRIAGE_DIV.style("top", box_y + "px");
 }
 
 function checkNullVisData(data) {
@@ -81,17 +81,15 @@ function scoreArticle(textFileUrl, dataFileUrl, triageFileUrl, userFileUrl) {
       DATA_FILE_URL = dataFileUrl;
       TRIAGE_FILE_URL = triageFileUrl;
       d3.text(textFileUrl, function(text) {
-        
+
           d3.csv(dataFileUrl, function(error, data) {
             if (error) {
               console.log(error);
               hideExtraElem();
               return;
             }
-            
             d3.csv(triageFileUrl, function(error, triage_data) {
               if (error) {
-                
                 console.log("No triage file found");
                 if (checkNullVisData(data)) {
                   hideExtraElem();
@@ -101,11 +99,9 @@ function scoreArticle(textFileUrl, dataFileUrl, triageFileUrl, userFileUrl) {
                 createHighlights(data, triage_data, text.toString());
                 hallmark(data);
               } else {
-                
                 if (checkNullVisData(data) || checkNullTriageData(triage_data)) {
-                  // hideExtraElem();
-                  console.log('Our data has some null elements');
-                  //return;
+                  hideExtraElem();
+                  return;
                 }
                 document.getElementById("textArticle").innerHTML = text.toString();
                 delete data['columns'];
@@ -253,18 +249,6 @@ function createTriageHighlights(json, textString, triage) {
 }
 
 
-function definitionClick() {
-  if (!DEFINITION_SHOWING) {
-   DEFINITION_SHOWING = true;
-    var textWithDefinition = addDefinition(TOOLTIP_TEXT);
-    const sunburstPosition = $(".sunburst").offset();
-    drawTooltipDiv(DIV, textWithDefinition, textWithDefinition.length, Math.min(textWithDefinition.length, 20), sunburstPosition.left, sunburstPosition.top);
-  } else {
-    DEFINITION_SHOWING = false;
-    document.body.style.cursor = "default";
-    
-  }
-}
 
 
 
@@ -293,7 +277,6 @@ function createHighlights(visData, triageData, textString) {
   finalHTML = textArray.join('');
   document.getElementById('textArticle').innerHTML = finalHTML;
   $(".highlight").hover(highlight, normal);
-  $(".highlight").on("click", definitionClick);
 }
 
 function openHighlight(textArray, index, entry, highlightStack, i, classic) {
@@ -482,8 +465,8 @@ function normal(x) {
     PSEUDOBOX.transition()
         .delay(300)
         .duration(600)
-        .style("opacity", 0);
-    DEFINITION_SHOWING = false;
+        .style("opacity", 0)
+
 
   var allSpans = document.getElementsByTagName('span');
   for (var i = 0; i < allSpans.length; i++) {
